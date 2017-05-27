@@ -640,7 +640,7 @@ $class-type: unquote(".");
 ==============================================================================*/
 
 body {
-  background:$navy;
+  background:#f6f6f6;
   color:#fff;
   font: {
     family:$bodyFontStack;;
@@ -841,7 +841,7 @@ header {
 }
 
 /*============================================================================
-  #Hero
+  #Home
 ==============================================================================*/
 
 #home {
@@ -853,6 +853,7 @@ header {
   height:100vh;
   position: relative;
   z-index: 1;
+  background:$navy;
 
   >div {
     @include transition(all,300ms,linear);
@@ -883,4 +884,20 @@ header {
       color:$beige;
     }
   }
+}
+
+/*============================================================================
+  #Work
+==============================================================================*/
+
+#work {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
+  text-align:center;
+  height:100vh;
+  position: relative;
+  z-index: 1;
+  background:$beige;
 }

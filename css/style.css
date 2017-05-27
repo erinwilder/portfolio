@@ -2131,7 +2131,7 @@ input[type="search"]::-webkit-search-decoration {
   #Universal Elements
 ==============================================================================*/
 body {
-  background: #363B4F;
+  background: #f6f6f6;
   color: #fff;
   font-family: "proxima-nova", sans-serif;
   font-size: 20px; }
@@ -2303,7 +2303,7 @@ header {
             background: linear-gradient(to top, #FFC9C4 0%, #F0D8CC 100%); }
 
 /*============================================================================
-  #Hero
+  #Home
 ==============================================================================*/
 #home {
   display: flex;
@@ -2313,7 +2313,8 @@ header {
   text-align: center;
   height: 100vh;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  background: #363B4F; }
   #home > div {
     -webkit-transition: all 300ms linear;
     -moz-transition: all 300ms linear;
@@ -2344,5 +2345,19 @@ header {
         margin: 12px 0 0; }
     #home > div h6 {
       color: #F2E9E1; }
+
+/*============================================================================
+  #Work
+==============================================================================*/
+#work {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  background: #F2E9E1; }
 
 /*# sourceMappingURL=style.css.map */
