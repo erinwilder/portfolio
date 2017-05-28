@@ -18,26 +18,28 @@
 /*============================================================================
   #Breakpoint and Grid Variables
 ==============================================================================*/
-$viewportIncrement: 1px;
+//#region
+  $viewportIncrement: 1px;
 
-$small: 480px;
-$medium: 768px;
-$large: 769px;
+  $small: 480px;
+  $medium: 768px;
+  $large: 769px;
 
-$postSmall: $small + $viewportIncrement;
-$preMedium: $medium - $viewportIncrement;
-$preLarge: $large - $viewportIncrement;
+  $postSmall: $small + $viewportIncrement;
+  $preMedium: $medium - $viewportIncrement;
+  $preLarge: $large - $viewportIncrement;
 
-/*================ The following are dependencies of csswizardry grid ================*/
-$breakpoints: (
-  'small' '(max-width: #{$small})',
-  'medium' '(min-width: #{$postSmall}) and (max-width: #{$medium})',
-  'medium-down' '(max-width: #{$medium})',
-  'large' '(min-width: #{$large})'
-);
-$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large');
-$breakpoint-has-push:  ('medium', 'medium-down', 'large');
-$breakpoint-has-pull:  ('medium', 'medium-down', 'large');
+  /*================ The following are dependencies of csswizardry grid ================*/
+  $breakpoints: (
+    'small' '(max-width: #{$small})',
+    'medium' '(min-width: #{$postSmall}) and (max-width: #{$medium})',
+    'medium-down' '(max-width: #{$medium})',
+    'large' '(min-width: #{$large})'
+  );
+  $breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large');
+  $breakpoint-has-push:  ('medium', 'medium-down', 'large');
+  $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
+//#endregion
 
 /*============================================================================
   #General Variables
@@ -55,10 +57,195 @@ $gutter: 30px;
 
 /*================ Typography ================*/
 
-$headerFontStack: 'proxima-nova-condensed',  sans-serif;
+//#region
+  @font-face {
+    font-family: 'GT America Compressed';
+    src: url('../fonts//GTAmerica-CompressedUltraLight.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CompressedUltraLight.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America Compressed';
+    src: url('../fonts//GTAmerica-CompressedUltraLightItalic.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CompressedUltraLightItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GT America Compressed';
+    src: url('../fonts//GTAmerica-CompressedThin.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CompressedThin.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America Compressed';
+    src: url('../fonts//GTAmerica-CompressedThinItalic.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CompressedThinItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GT America Compressed';
+    src: url('../fonts//GTAmerica-CompressedLight.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CompressedLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America Compressed';
+    src: url('../fonts//GTAmerica-CompressedLightItalic.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CompressedLightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GT America Compressed';
+    src: url('../fonts//GTAmerica-CompressedRegular.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CompressedRegular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America Compressed';
+    src: url('../fonts//GTAmerica-CompressedRegularItalic.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CompressedRegularItalic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GT America Compressed';
+    src: url('../fonts//GTAmerica-CompressedMedium.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CompressedMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America Compressed';
+    src: url('../fonts//GTAmerica-CompressedMediumItalic.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CompressedMediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GT America Compressed';
+    src: url('../fonts//GTAmerica-CompressedBold.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CompressedBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America Compressed';
+    src: url('../fonts//GTAmerica-CompressedBoldItalic.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CompressedBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GT America Condensed';
+    src: url('../fonts//GTAmerica-CondensedUltraLight.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CondensedUltraLight.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America Condensed';
+    src: url('../fonts//GTAmerica-CondensedUltraLightItalic.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CondensedUltraLightItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GT America Condensed';
+    src: url('../fonts//GTAmerica-CondensedThin.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CondensedThin.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America Condensed';
+    src: url('../fonts//GTAmerica-CondensedThinItalic.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CondensedThinItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GT America Condensed';
+    src: url('../fonts//GTAmerica-CondensedLight.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CondensedLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America Condensed';
+    src: url('../fonts//GTAmerica-CondensedLightItalic.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CondensedLightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GT America Condensed';
+    src: url('../fonts//GTAmerica-CondensedRegular.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CondensedRegular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America Condensed';
+    src: url('../fonts//GTAmerica-CondensedRegularItalic.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CondensedRegularItalic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GT America Condensed';
+    src: url('../fonts//GTAmerica-CondensedMedium.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CondensedMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America Condensed';
+    src: url('../fonts//GTAmerica-CondensedMediumItalic.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CondensedMediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GT America Condensed';
+    src: url('../fonts//GTAmerica-CondensedBold.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CondensedBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America Condensed';
+    src: url('../fonts//GTAmerica-CondensedBoldItalic.woff2') format('woff2'),
+      url('../fonts//GTAmerica-CondensedBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GT America';
+    src: url('../fonts/GTAmerica_Light.woff2') format('woff2'),
+      url('../fonts/GTAmerica_Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GT America';
+    src: url('../fonts/GTAmerica-LightItalic.woff2') format('woff2'),
+      url('../fonts/GTAmerica-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+  }
+//#endregion
+
+$headerFontStack: 'GT America Compressed',  sans-serif;
 $headerFontWeight: 300;
 
-$bodyFontStack: 'proxima-nova',  sans-serif;
+$bodyFontStack: 'GT America Condensed',  sans-serif;
 $baseFontSize: 20px; // Henceforth known as 1em
 
 /*============================================================================
@@ -81,67 +268,70 @@ $baseFontSize: 20px; // Henceforth known as 1em
 }
 
 /*================ Gradient Mixin ================*/
-/// Convert angle
-@function convert-angle($value, $unit) {
-  $convertable-units: deg grad turn rad;
-  $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
-  @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
-    @return $value
-             / nth($conversion-factors, index($convertable-units, unit($value)))
-             * nth($conversion-factors, index($convertable-units, $unit));
-  }
-  
-  @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
-}
 
-/// Test if `$value` is an angle
-@function is-direction($value) {
-  $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
-  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
-  
-  @return $is-direction or $is-angle;
-}
-
-/// Convert a direction to legacy syntax
-@function legacy-direction($value) {
-  @if is-direction($value) == false {
-    @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
-  }
-  
-  $conversion-map: ( 
-    to top          : bottom,
-    to top right    : bottom left,
-    to right top    : left bottom,
-    to right        : left,
-    to bottom right : top left,
-    to right bottom : left top,
-    to bottom       : top,
-    to bottom left  : top right,
-    to left bottom  : right top,
-    to left         : right,
-    to left top     : right bottom,
-    to top left     : bottom right
-  );
+//#region
+  /// Convert angle
+  @function convert-angle($value, $unit) {
+    $convertable-units: deg grad turn rad;
+    $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
+    @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+      @return $value
+              / nth($conversion-factors, index($convertable-units, unit($value)))
+              * nth($conversion-factors, index($convertable-units, $unit));
+    }
     
-  @if map-has-key($conversion-map, $value) {
-    @return map-get($conversion-map, $value);
+    @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
   }
-  
-  @return 90deg - convert-angle($value, 'deg');
-}
 
-/// Mixin printing a linear-gradient 
-@mixin linear-gradient($direction, $color-stops...) {
-  @if is-direction($direction) == false {
-    $color-stops: ($direction, $color-stops);
-    $direction: 180deg;
+  /// Test if `$value` is an angle
+  @function is-direction($value) {
+    $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+    $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+    
+    @return $is-direction or $is-angle;
   }
-  
-  background: nth(nth($color-stops, 1), 1);
-  background: -moz-linear-gradient(legacy-direction($direction), $color-stops);
-  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
-  background: linear-gradient($direction, $color-stops);
-}
+
+  /// Convert a direction to legacy syntax
+  @function legacy-direction($value) {
+    @if is-direction($value) == false {
+      @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
+    }
+    
+    $conversion-map: ( 
+      to top          : bottom,
+      to top right    : bottom left,
+      to right top    : left bottom,
+      to right        : left,
+      to bottom right : top left,
+      to right bottom : left top,
+      to bottom       : top,
+      to bottom left  : top right,
+      to left bottom  : right top,
+      to left         : right,
+      to left top     : right bottom,
+      to top left     : bottom right
+    );
+      
+    @if map-has-key($conversion-map, $value) {
+      @return map-get($conversion-map, $value);
+    }
+    
+    @return 90deg - convert-angle($value, 'deg');
+  }
+
+  /// Mixin printing a linear-gradient 
+  @mixin linear-gradient($direction, $color-stops...) {
+    @if is-direction($direction) == false {
+      $color-stops: ($direction, $color-stops);
+      $direction: 180deg;
+    }
+    
+    background: nth(nth($color-stops, 1), 1);
+    background: -moz-linear-gradient(legacy-direction($direction), $color-stops);
+    background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+    background: linear-gradient($direction, $color-stops);
+  }
+//#endregion
 
 /*================ Transition Mixin ================*/
 @mixin transition($property,$duration,$function) {
@@ -206,33 +396,35 @@ $max: max-width;
 /*============================================================================
   #Normalize
 ==============================================================================*/
-*, input, :before, :after {
-  box-sizing: border-box;
-}
+//#region
+  *, input, :before, :after {
+    box-sizing: border-box;
+  }
 
-html, body {
-  padding: 0;
-  margin: 0;
-}
+  html, body {
+    padding: 0;
+    margin: 0;
+  }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
-  display: block;
-}
+  article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+  }
 
-audio, canvas, progress, video {
-  display: inline-block;
-  vertical-align: baseline;
-}
+  audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+  }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+//#endregion
 
 /*============================================================================
   #Grid Setup
@@ -240,50 +432,51 @@ input[type="search"]::-webkit-search-decoration {
     - Breakpoints defined above, under #Breakpoint and Grid Variables
     - Note the inclusion of .grid-uniform to take care of clearfixes on evenly sized grid items
 ==============================================================================*/
-$responsive:         true;
-$mobile-first:       true;
-$use-silent-classes: false;
-$push:               true;
-$pull:               true;
+//#region
+  $responsive:         true;
+  $mobile-first:       true;
+  $use-silent-classes: false;
+  $push:               true;
+  $pull:               true;
 
-/* Force clearfix on grids */
-.grid,
-.grid-uniform {
-  @include clearfix;
-}
+  /* Force clearfix on grids */
+  .grid,
+  .grid-uniform {
+    @include clearfix;
+  }
 
-/* Manual grid__item clearfix */
-.grid__item.clear {
-  clear: both;
-}
+  /* Manual grid__item clearfix */
+  .grid__item.clear {
+    clear: both;
+  }
 
-$class-type: unquote(".");
+  $class-type: unquote(".");
 
-@if $use-silent-classes == true {
-  $class-type: unquote("%");
-}
+  @if $use-silent-classes == true {
+    $class-type: unquote("%");
+  }
 
-@mixin grid-media-query($media-query) {
-  $breakpoint-found: false;
+  @mixin grid-media-query($media-query) {
+    $breakpoint-found: false;
 
-  @each $breakpoint in $breakpoints {
-    $name: nth($breakpoint, 1);
-    $declaration: nth($breakpoint, 2);
+    @each $breakpoint in $breakpoints {
+      $name: nth($breakpoint, 1);
+      $declaration: nth($breakpoint, 2);
 
-    @if $media-query == $name and $declaration {
-      $breakpoint-found: true;
+      @if $media-query == $name and $declaration {
+        $breakpoint-found: true;
 
-      @media only screen and #{$declaration} {
-        @content;
+        @media only screen and #{$declaration} {
+          @content;
+        }
       }
     }
-  }
 
-  @if $breakpoint-found == false {
-    @warn "Breakpoint '#{$media-query}' does not exist";
+    @if $breakpoint-found == false {
+      @warn "Breakpoint '#{$media-query}' does not exist";
+    }
   }
-}
-
+//#endregion
 
 /*============================================================================
   Drop relative positioning into silent classes which can't take advantage of
@@ -301,339 +494,349 @@ $class-type: unquote(".");
     2. Remove any margins and paddings that might affect the grid system.
     3. Apply a negative `margin-left` to negate the columns' gutters.
 ==============================================================================*/
-#{$class-type}grid,
-#{$class-type}grid-uniform {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-left: -$gutter;
-}
-
-#{$class-type}grid__item {
-  box-sizing: border-box;
-  float: left;
-  min-height: 1px;
-  padding-left: $gutter;
-  vertical-align: top;
-  @if $mobile-first == true {
-    width: 100%;
+//#region
+  #{$class-type}grid,
+  #{$class-type}grid-uniform {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: -$gutter;
   }
-}
+
+  #{$class-type}grid__item {
+    box-sizing: border-box;
+    float: left;
+    min-height: 1px;
+    padding-left: $gutter;
+    vertical-align: top;
+    @if $mobile-first == true {
+      width: 100%;
+    }
+  }
+//#endregion
 
 /*============================================================================
   Reversed grids allow you to structure your source in the opposite
   order to how your rendered layout will appear.
 ==============================================================================*/
-#{$class-type}grid--rev {
-  @extend #{$class-type}grid;
-  direction: rtl;
-  text-align: left;
-
-  > #{$class-type}grid__item {
-    direction: ltr;
+//#region
+  #{$class-type}grid--rev {
+    @extend #{$class-type}grid;
+    direction: rtl;
     text-align: left;
-    float: right;
-  }
-}
-
-/* Gutterless grids have all the properties of regular grids, minus any spacing. */
-#{$class-type}grid--full {
-  @extend #{$class-type}grid;
-  margin-left: 0;
-
-  > #{$class-type}grid__item {
-    padding-left: 0;
-  }
-}
-
-/* Centered grids align grid items centrally without needing to use push or pull classes. Extends `.grid`.*/
-#{$class-type}grid--center {
-    text-align:center;
 
     > #{$class-type}grid__item {
-        text-align:left;
-      	padding-left:$gutter / 2;
-		padding-right:$gutter / 2;      
+      direction: ltr;
+      text-align: left;
+      float: right;
     }
-}
+  }
+
+  /* Gutterless grids have all the properties of regular grids, minus any spacing. */
+  #{$class-type}grid--full {
+    @extend #{$class-type}grid;
+    margin-left: 0;
+
+    > #{$class-type}grid__item {
+      padding-left: 0;
+    }
+  }
+
+  /* Centered grids align grid items centrally without needing to use push or pull classes. Extends `.grid`.*/
+  #{$class-type}grid--center {
+      text-align:center;
+
+      > #{$class-type}grid__item {
+          text-align:left;
+          padding-left:$gutter / 2;
+      padding-right:$gutter / 2;      
+      }
+  }
+//#endregion
 
 /*============================================================================
   WIDTHS
     - Create width classes, prefixed by the specified namespace.
 ==============================================================================*/
-@mixin device-type($namespace:"") {
-  /** Whole */
-  #{$class-type}#{$namespace}one-whole       { width: 100%; }
+//#region
+  @mixin device-type($namespace:"") {
+    /** Whole */
+    #{$class-type}#{$namespace}one-whole       { width: 100%; }
 
-  /* Halves */
-  #{$class-type}#{$namespace}one-half        { width: 50%; }
+    /* Halves */
+    #{$class-type}#{$namespace}one-half        { width: 50%; }
 
-  /* Thirds */
-  #{$class-type}#{$namespace}one-third       { width: 33.333%; }
-  #{$class-type}#{$namespace}two-thirds      { width: 66.666%; }
+    /* Thirds */
+    #{$class-type}#{$namespace}one-third       { width: 33.333%; }
+    #{$class-type}#{$namespace}two-thirds      { width: 66.666%; }
 
-  /* Quarters */
-  #{$class-type}#{$namespace}one-quarter     { width: 25%; }
-  #{$class-type}#{$namespace}two-quarters    { width: 50%; }
-  #{$class-type}#{$namespace}three-quarters  { width: 75%; }
+    /* Quarters */
+    #{$class-type}#{$namespace}one-quarter     { width: 25%; }
+    #{$class-type}#{$namespace}two-quarters    { width: 50%; }
+    #{$class-type}#{$namespace}three-quarters  { width: 75%; }
 
-  /* Fifths */
-  #{$class-type}#{$namespace}one-fifth       { width: 20%; }
-  #{$class-type}#{$namespace}two-fifths      { width: 40%; }
-  #{$class-type}#{$namespace}three-fifths    { width: 60%; }
-  #{$class-type}#{$namespace}four-fifths     { width: 80%; }
+    /* Fifths */
+    #{$class-type}#{$namespace}one-fifth       { width: 20%; }
+    #{$class-type}#{$namespace}two-fifths      { width: 40%; }
+    #{$class-type}#{$namespace}three-fifths    { width: 60%; }
+    #{$class-type}#{$namespace}four-fifths     { width: 80%; }
 
-  /* Sixths */
-  #{$class-type}#{$namespace}one-sixth       { width: 16.666%; }
-  #{$class-type}#{$namespace}two-sixths      { width: 33.333%; }
-  #{$class-type}#{$namespace}three-sixths    { width: 50%; }
-  #{$class-type}#{$namespace}four-sixths     { width: 66.666%; }
-  #{$class-type}#{$namespace}five-sixths     { width: 83.333%; }
+    /* Sixths */
+    #{$class-type}#{$namespace}one-sixth       { width: 16.666%; }
+    #{$class-type}#{$namespace}two-sixths      { width: 33.333%; }
+    #{$class-type}#{$namespace}three-sixths    { width: 50%; }
+    #{$class-type}#{$namespace}four-sixths     { width: 66.666%; }
+    #{$class-type}#{$namespace}five-sixths     { width: 83.333%; }
 
-  /* Eighths */
-  #{$class-type}#{$namespace}one-eighth      { width: 12.5%; }
-  #{$class-type}#{$namespace}two-eighths     { width: 25%; }
-  #{$class-type}#{$namespace}three-eighths   { width: 37.5%; }
-  #{$class-type}#{$namespace}four-eighths    { width: 50%; }
-  #{$class-type}#{$namespace}five-eighths    { width: 62.5%; }
-  #{$class-type}#{$namespace}six-eighths     { width: 75%; }
-  #{$class-type}#{$namespace}seven-eighths   { width: 87.5%; }
+    /* Eighths */
+    #{$class-type}#{$namespace}one-eighth      { width: 12.5%; }
+    #{$class-type}#{$namespace}two-eighths     { width: 25%; }
+    #{$class-type}#{$namespace}three-eighths   { width: 37.5%; }
+    #{$class-type}#{$namespace}four-eighths    { width: 50%; }
+    #{$class-type}#{$namespace}five-eighths    { width: 62.5%; }
+    #{$class-type}#{$namespace}six-eighths     { width: 75%; }
+    #{$class-type}#{$namespace}seven-eighths   { width: 87.5%; }
 
-  /* Tenths */
-  #{$class-type}#{$namespace}one-tenth       { width: 10%; }
-  #{$class-type}#{$namespace}two-tenths      { width: 20%; }
-  #{$class-type}#{$namespace}three-tenths    { width: 30%; }
-  #{$class-type}#{$namespace}four-tenths     { width: 40%; }
-  #{$class-type}#{$namespace}five-tenths     { width: 50%; }
-  #{$class-type}#{$namespace}six-tenths      { width: 60%; }
-  #{$class-type}#{$namespace}seven-tenths    { width: 70%; }
-  #{$class-type}#{$namespace}eight-tenths    { width: 80%; }
-  #{$class-type}#{$namespace}nine-tenths     { width: 90%; }
+    /* Tenths */
+    #{$class-type}#{$namespace}one-tenth       { width: 10%; }
+    #{$class-type}#{$namespace}two-tenths      { width: 20%; }
+    #{$class-type}#{$namespace}three-tenths    { width: 30%; }
+    #{$class-type}#{$namespace}four-tenths     { width: 40%; }
+    #{$class-type}#{$namespace}five-tenths     { width: 50%; }
+    #{$class-type}#{$namespace}six-tenths      { width: 60%; }
+    #{$class-type}#{$namespace}seven-tenths    { width: 70%; }
+    #{$class-type}#{$namespace}eight-tenths    { width: 80%; }
+    #{$class-type}#{$namespace}nine-tenths     { width: 90%; }
 
-  /* Twelfths */
-  #{$class-type}#{$namespace}one-twelfth     { width: 8.333%; }
-  #{$class-type}#{$namespace}two-twelfths    { width: 16.666%; }
-  #{$class-type}#{$namespace}three-twelfths  { width: 25%; }
-  #{$class-type}#{$namespace}four-twelfths   { width: 33.333%; }
-  #{$class-type}#{$namespace}five-twelfths   { width: 41.666% }
-  #{$class-type}#{$namespace}six-twelfths    { width: 50%; }
-  #{$class-type}#{$namespace}seven-twelfths  { width: 58.333%; }
-  #{$class-type}#{$namespace}eight-twelfths  { width: 66.666%; }
-  #{$class-type}#{$namespace}nine-twelfths   { width: 75%; }
-  #{$class-type}#{$namespace}ten-twelfths    { width: 83.333%; }
-  #{$class-type}#{$namespace}eleven-twelfths { width: 91.666%; }
-}
-
-/*================ Clearfix helper on uniform grids ================*/
-@mixin clearfix-helper($namespace:"") {
-  .grid-uniform {
-    #{$class-type}#{$namespace}one-half:nth-child(2n+1),
-    #{$class-type}#{$namespace}one-third:nth-child(3n+1),
-    #{$class-type}#{$namespace}one-quarter:nth-child(4n+1),
-    #{$class-type}#{$namespace}one-fifth:nth-child(5n+1),
-    #{$class-type}#{$namespace}one-sixth:nth-child(6n+1),
-    #{$class-type}#{$namespace}two-sixths:nth-child(3n+1),
-    #{$class-type}#{$namespace}three-sixths:nth-child(2n+1),
-    #{$class-type}#{$namespace}two-eighths:nth-child(4n+1),
-    #{$class-type}#{$namespace}four-eighths:nth-child(2n+1),
-    #{$class-type}#{$namespace}five-tenths:nth-child(2n+1),
-    #{$class-type}#{$namespace}one-twelfth:nth-child(12n+1),
-    #{$class-type}#{$namespace}two-twelfths:nth-child(6n+1),
-    #{$class-type}#{$namespace}three-twelfths:nth-child(4n+1),
-    #{$class-type}#{$namespace}four-twelfths:nth-child(3n+1),
-    #{$class-type}#{$namespace}six-twelfths:nth-child(2n+1)    { clear: both; }
+    /* Twelfths */
+    #{$class-type}#{$namespace}one-twelfth     { width: 8.333%; }
+    #{$class-type}#{$namespace}two-twelfths    { width: 16.666%; }
+    #{$class-type}#{$namespace}three-twelfths  { width: 25%; }
+    #{$class-type}#{$namespace}four-twelfths   { width: 33.333%; }
+    #{$class-type}#{$namespace}five-twelfths   { width: 41.666% }
+    #{$class-type}#{$namespace}six-twelfths    { width: 50%; }
+    #{$class-type}#{$namespace}seven-twelfths  { width: 58.333%; }
+    #{$class-type}#{$namespace}eight-twelfths  { width: 66.666%; }
+    #{$class-type}#{$namespace}nine-twelfths   { width: 75%; }
+    #{$class-type}#{$namespace}ten-twelfths    { width: 83.333%; }
+    #{$class-type}#{$namespace}eleven-twelfths { width: 91.666%; }
   }
-}
 
-/*================ Helper show/hide classes around our breakpoints ================*/
-@mixin device-helper($namespace:"") {
-  #{$class-type}#{$namespace}show        { display: block!important; }
-  #{$class-type}#{$namespace}hide        { display: none!important; }
-
-  #{$class-type}#{$namespace}text-left   { text-align: left!important; }
-  #{$class-type}#{$namespace}text-right  { text-align: right!important; }
-  #{$class-type}#{$namespace}text-center { text-align: center!important; }
-
-  #{$class-type}#{$namespace}left        { float: left!important; }
-  #{$class-type}#{$namespace}right       { float: right!important; }
-}
-
-/*================ Our regular, non-responsive width and helper classes ================*/
-@include device-type();
-@include device-helper();
-
-/*================ Our responsive classes, if we have enabled them ================*/
-@if $responsive == true {
-  @each $name in $breakpoint-has-widths {
-    @include grid-media-query($name) {
-      @include device-type('#{$name}--');
-      @include device-helper('#{$name}--');
-      @include clearfix-helper('#{$name}--');
+  /*================ Clearfix helper on uniform grids ================*/
+  @mixin clearfix-helper($namespace:"") {
+    .grid-uniform {
+      #{$class-type}#{$namespace}one-half:nth-child(2n+1),
+      #{$class-type}#{$namespace}one-third:nth-child(3n+1),
+      #{$class-type}#{$namespace}one-quarter:nth-child(4n+1),
+      #{$class-type}#{$namespace}one-fifth:nth-child(5n+1),
+      #{$class-type}#{$namespace}one-sixth:nth-child(6n+1),
+      #{$class-type}#{$namespace}two-sixths:nth-child(3n+1),
+      #{$class-type}#{$namespace}three-sixths:nth-child(2n+1),
+      #{$class-type}#{$namespace}two-eighths:nth-child(4n+1),
+      #{$class-type}#{$namespace}four-eighths:nth-child(2n+1),
+      #{$class-type}#{$namespace}five-tenths:nth-child(2n+1),
+      #{$class-type}#{$namespace}one-twelfth:nth-child(12n+1),
+      #{$class-type}#{$namespace}two-twelfths:nth-child(6n+1),
+      #{$class-type}#{$namespace}three-twelfths:nth-child(4n+1),
+      #{$class-type}#{$namespace}four-twelfths:nth-child(3n+1),
+      #{$class-type}#{$namespace}six-twelfths:nth-child(2n+1)    { clear: both; }
     }
   }
-}
+
+  /*================ Helper show/hide classes around our breakpoints ================*/
+  @mixin device-helper($namespace:"") {
+    #{$class-type}#{$namespace}show        { display: block!important; }
+    #{$class-type}#{$namespace}hide        { display: none!important; }
+
+    #{$class-type}#{$namespace}text-left   { text-align: left!important; }
+    #{$class-type}#{$namespace}text-right  { text-align: right!important; }
+    #{$class-type}#{$namespace}text-center { text-align: center!important; }
+
+    #{$class-type}#{$namespace}left        { float: left!important; }
+    #{$class-type}#{$namespace}right       { float: right!important; }
+  }
+
+  /*================ Our regular, non-responsive width and helper classes ================*/
+  @include device-type();
+  @include device-helper();
+
+  /*================ Our responsive classes, if we have enabled them ================*/
+  @if $responsive == true {
+    @each $name in $breakpoint-has-widths {
+      @include grid-media-query($name) {
+        @include device-type('#{$name}--');
+        @include device-helper('#{$name}--');
+        @include clearfix-helper('#{$name}--');
+      }
+    }
+  }
+//#endregion
 
 /*============================================================================
   PUSH
     - Push classes, to move grid items over to the right by certain amounts
 ==============================================================================*/
-@mixin push-setup($namespace: "") {
-  /* Whole */
-  #{$class-type}push--#{$namespace}one-whole       { left: 100%; @include silent-relative(); }
+//#region
+  @mixin push-setup($namespace: "") {
+    /* Whole */
+    #{$class-type}push--#{$namespace}one-whole       { left: 100%; @include silent-relative(); }
 
-  /* Halves */
-  #{$class-type}push--#{$namespace}one-half        { left: 50%; @include silent-relative(); }
+    /* Halves */
+    #{$class-type}push--#{$namespace}one-half        { left: 50%; @include silent-relative(); }
 
-  /* Thirds */
-  #{$class-type}push--#{$namespace}one-third       { left: 33.333%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-thirds      { left: 66.666%; @include silent-relative(); }
+    /* Thirds */
+    #{$class-type}push--#{$namespace}one-third       { left: 33.333%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}two-thirds      { left: 66.666%; @include silent-relative(); }
 
-  /* Quarters */
-  #{$class-type}push--#{$namespace}one-quarter     { left: 25%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-quarters    { left: 50%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}three-quarters  { left: 75%; @include silent-relative(); }
+    /* Quarters */
+    #{$class-type}push--#{$namespace}one-quarter     { left: 25%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}two-quarters    { left: 50%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}three-quarters  { left: 75%; @include silent-relative(); }
 
-  /* Fifths */
-  #{$class-type}push--#{$namespace}one-fifth       { left: 20%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-fifths      { left: 40%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}three-fifths    { left: 60%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}four-fifths     { left: 80%; @include silent-relative(); }
+    /* Fifths */
+    #{$class-type}push--#{$namespace}one-fifth       { left: 20%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}two-fifths      { left: 40%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}three-fifths    { left: 60%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}four-fifths     { left: 80%; @include silent-relative(); }
 
-  /* Sixths */
-  #{$class-type}push--#{$namespace}one-sixth       { left: 16.666%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-sixths      { left: 33.333%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}three-sixths    { left: 50%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}four-sixths     { left: 66.666%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}five-sixths     { left: 83.333%; @include silent-relative(); }
+    /* Sixths */
+    #{$class-type}push--#{$namespace}one-sixth       { left: 16.666%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}two-sixths      { left: 33.333%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}three-sixths    { left: 50%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}four-sixths     { left: 66.666%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}five-sixths     { left: 83.333%; @include silent-relative(); }
 
-  /* Eighths */
-  #{$class-type}push--#{$namespace}one-eighth      { left: 12.5%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-eighths     { left: 25%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}three-eighths   { left: 37.5%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}four-eighths    { left: 50%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}five-eighths    { left: 62.5%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}six-eighths     { left: 75%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}seven-eighths   { left: 87.5%; @include silent-relative(); }
+    /* Eighths */
+    #{$class-type}push--#{$namespace}one-eighth      { left: 12.5%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}two-eighths     { left: 25%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}three-eighths   { left: 37.5%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}four-eighths    { left: 50%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}five-eighths    { left: 62.5%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}six-eighths     { left: 75%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}seven-eighths   { left: 87.5%; @include silent-relative(); }
 
-  /* Tenths */
-  #{$class-type}push--#{$namespace}one-tenth       { left: 10%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-tenths      { left: 20%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}three-tenths    { left: 30%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}four-tenths     { left: 40%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}five-tenths     { left: 50%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}six-tenths      { left: 60%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}seven-tenths    { left: 70%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}eight-tenths    { left: 80%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}nine-tenths     { left: 90%; @include silent-relative(); }
+    /* Tenths */
+    #{$class-type}push--#{$namespace}one-tenth       { left: 10%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}two-tenths      { left: 20%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}three-tenths    { left: 30%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}four-tenths     { left: 40%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}five-tenths     { left: 50%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}six-tenths      { left: 60%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}seven-tenths    { left: 70%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}eight-tenths    { left: 80%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}nine-tenths     { left: 90%; @include silent-relative(); }
 
-  /* Twelfths */
-  #{$class-type}push--#{$namespace}one-twelfth     { left: 8.333%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-twelfths    { left: 16.666%; @include silent-relative();  }
-  #{$class-type}push--#{$namespace}three-twelfths  { left: 25%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}four-twelfths   { left: 33.333%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}five-twelfths   { left: 41.666%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}six-twelfths    { left: 50%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}seven-twelfths  { left: 58.333%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}eight-twelfths  { left: 66.666%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}nine-twelfths   { left: 75%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}ten-twelfths    { left: 83.333%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}eleven-twelfths { left: 91.666%; @include silent-relative(); }
-}
+    /* Twelfths */
+    #{$class-type}push--#{$namespace}one-twelfth     { left: 8.333%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}two-twelfths    { left: 16.666%; @include silent-relative();  }
+    #{$class-type}push--#{$namespace}three-twelfths  { left: 25%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}four-twelfths   { left: 33.333%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}five-twelfths   { left: 41.666%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}six-twelfths    { left: 50%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}seven-twelfths  { left: 58.333%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}eight-twelfths  { left: 66.666%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}nine-twelfths   { left: 75%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}ten-twelfths    { left: 83.333%; @include silent-relative(); }
+    #{$class-type}push--#{$namespace}eleven-twelfths { left: 91.666%; @include silent-relative(); }
+  }
 
-@if $push == true {
-  [class*="push--"]{ position:relative; }
+  @if $push == true {
+    [class*="push--"]{ position:relative; }
 
-  @include push-setup();
+    @include push-setup();
 
-  @if $responsive == true {
-    @each $name in $breakpoint-has-push {
-      @include grid-media-query($name) {
-        @include push-setup('#{$name}--');
+    @if $responsive == true {
+      @each $name in $breakpoint-has-push {
+        @include grid-media-query($name) {
+          @include push-setup('#{$name}--');
+        }
       }
     }
   }
-}
+//#endregion
 
 /*============================================================================
   PULL
     - Pull classes, to move grid items back to the left by certain amounts
 ==============================================================================*/
-@mixin pull-setup($namespace: "") {
-  /* Whole */
-  #{$class-type}pull--#{$namespace}one-whole       { right: 100%; @include silent-relative(); }
+//#region
+  @mixin pull-setup($namespace: "") {
+    /* Whole */
+    #{$class-type}pull--#{$namespace}one-whole       { right: 100%; @include silent-relative(); }
 
-  /* Halves */
-  #{$class-type}pull--#{$namespace}one-half        { right: 50%; @include silent-relative(); }
+    /* Halves */
+    #{$class-type}pull--#{$namespace}one-half        { right: 50%; @include silent-relative(); }
 
-  /* Thirds */
-  #{$class-type}pull--#{$namespace}one-third       { right: 33.333%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-thirds      { right: 66.666%; @include silent-relative(); }
+    /* Thirds */
+    #{$class-type}pull--#{$namespace}one-third       { right: 33.333%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}two-thirds      { right: 66.666%; @include silent-relative(); }
 
-  /* Quarters */
-  #{$class-type}pull--#{$namespace}one-quarter     { right: 25%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-quarters    { right: 50%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}three-quarters  { right: 75%; @include silent-relative(); }
+    /* Quarters */
+    #{$class-type}pull--#{$namespace}one-quarter     { right: 25%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}two-quarters    { right: 50%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}three-quarters  { right: 75%; @include silent-relative(); }
 
-  /* Fifths */
-  #{$class-type}pull--#{$namespace}one-fifth       { right: 20%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-fifths      { right: 40%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}three-fifths    { right: 60%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}four-fifths     { right: 80%; @include silent-relative(); }
+    /* Fifths */
+    #{$class-type}pull--#{$namespace}one-fifth       { right: 20%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}two-fifths      { right: 40%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}three-fifths    { right: 60%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}four-fifths     { right: 80%; @include silent-relative(); }
 
-  /* Sixths */
-  #{$class-type}pull--#{$namespace}one-sixth       { right: 16.666%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-sixths      { right: 33.333%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}three-sixths    { right: 50%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}four-sixths     { right: 66.666%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}five-sixths     { right: 83.333%; @include silent-relative(); }
+    /* Sixths */
+    #{$class-type}pull--#{$namespace}one-sixth       { right: 16.666%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}two-sixths      { right: 33.333%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}three-sixths    { right: 50%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}four-sixths     { right: 66.666%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}five-sixths     { right: 83.333%; @include silent-relative(); }
 
-  /* Eighths */
-  #{$class-type}pull--#{$namespace}one-eighth      { right: 12.5%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-eighths     { right: 25%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}three-eighths   { right: 37.5%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}four-eighths    { right: 50%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}five-eighths    { right: 62.5%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}six-eighths     { right: 75%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}seven-eighths   { right: 87.5%; @include silent-relative(); }
+    /* Eighths */
+    #{$class-type}pull--#{$namespace}one-eighth      { right: 12.5%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}two-eighths     { right: 25%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}three-eighths   { right: 37.5%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}four-eighths    { right: 50%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}five-eighths    { right: 62.5%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}six-eighths     { right: 75%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}seven-eighths   { right: 87.5%; @include silent-relative(); }
 
-  /* Tenths */
-  #{$class-type}pull--#{$namespace}one-tenth       { right: 10%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-tenths      { right: 20%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}three-tenths    { right: 30%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}four-tenths     { right: 40%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}five-tenths     { right: 50%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}six-tenths      { right: 60%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}seven-tenths    { right: 70%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}eight-tenths    { right: 80%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}nine-tenths     { right: 90%; @include silent-relative(); }
+    /* Tenths */
+    #{$class-type}pull--#{$namespace}one-tenth       { right: 10%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}two-tenths      { right: 20%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}three-tenths    { right: 30%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}four-tenths     { right: 40%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}five-tenths     { right: 50%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}six-tenths      { right: 60%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}seven-tenths    { right: 70%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}eight-tenths    { right: 80%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}nine-tenths     { right: 90%; @include silent-relative(); }
 
-  /* Twelfths */
-  #{$class-type}pull--#{$namespace}one-twelfth     { right: 8.333%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-twelfths    { right: 16.666%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}three-twelfths  { right: 25%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}four-twelfths   { right: 33.333%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}five-twelfths   { right: 41.666%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}six-twelfths    { right: 50%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}seven-twelfths  { right: 58.333%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}eight-twelfths  { right: 66.666%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}nine-twelfths   { right: 75%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}ten-twelfths    { right: 83.333%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}eleven-twelfths { right: 91.666%; @include silent-relative(); }
-}
+    /* Twelfths */
+    #{$class-type}pull--#{$namespace}one-twelfth     { right: 8.333%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}two-twelfths    { right: 16.666%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}three-twelfths  { right: 25%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}four-twelfths   { right: 33.333%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}five-twelfths   { right: 41.666%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}six-twelfths    { right: 50%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}seven-twelfths  { right: 58.333%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}eight-twelfths  { right: 66.666%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}nine-twelfths   { right: 75%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}ten-twelfths    { right: 83.333%; @include silent-relative(); }
+    #{$class-type}pull--#{$namespace}eleven-twelfths { right: 91.666%; @include silent-relative(); }
+  }
 
-@if $pull == true {
-  [class*="pull--"]{ position:relative; }
+  @if $pull == true {
+    [class*="pull--"]{ position:relative; }
 
-  @include pull-setup();
+    @include pull-setup();
 
-  @if $responsive == true {
-    @each $name in $breakpoint-has-pull {
-      @include grid-media-query($name) {
-        @include pull-setup('#{$name}--');
+    @if $responsive == true {
+      @each $name in $breakpoint-has-pull {
+        @include grid-media-query($name) {
+          @include pull-setup('#{$name}--');
+        }
       }
     }
   }
-}
+//#endregion
 
 /*============================================================================
   #Universal Elements
@@ -645,6 +848,7 @@ body {
   font: {
     family:$bodyFontStack;;
     size:$baseFontSize;
+    weight:300;
   }
 }
 
@@ -663,7 +867,6 @@ h6 {
 h1 {
   font: {
     size:7em;
-    family:'proxima-nova-extra-condensed',sans-serif;
     weight:200;
   }
   letter-spacing: 2rem;
@@ -672,22 +875,47 @@ h1 {
 h2 {
   font: {
     size:5em;
-    family:'proxima-nova-extra-condensed',sans-serif;
     weight:300;
   }
   text-transform: uppercase;
   letter-spacing: 0.5rem;
 }
-h6 {
+h3 {
+  font: {
+    size:4em;
+    weight:300;
+  }
   text-transform: uppercase;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.25rem;
+}
+h4 {
+  font: {
+    size:1.5em;
+    weight:300;
+  }
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+}
+h5 {
   font: {
     size:1em;
   }
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+h6 {
+  font: {
+    size:1em;
+  }
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
 }
 a {
   text-decoration: none;
   color:$pink;
+}
+strong {
+  font-weight:500;
 }
 
 header {
@@ -701,7 +929,7 @@ header {
   z-index:2;
 
   svg {
-    width:7rem;
+    width:6rem;
     position:relative;
 
     path {
@@ -781,6 +1009,7 @@ header {
       }
     }
   }
+
   nav {
     display: none;
     opacity:0;
@@ -840,6 +1069,18 @@ header {
   }
 }
 
+body.work #menu .line {
+    @include linear-gradient(to right, $navylt 20%, $navy 100%);
+}
+
+section>div {
+    @include transition(all,300ms,linear);
+
+    &.zoomOut {
+      @include transform-scale(0.75);
+    }
+}
+
 /*============================================================================
   #Home
 ==============================================================================*/
@@ -856,11 +1097,6 @@ header {
   background:$navy;
 
   >div {
-    @include transition(all,300ms,linear);
-
-    &.zoomOut {
-      @include transform-scale(0.75);
-    }
     >div {
       border:12px solid rgba(0,0,0,0.15);
       text-align:center;
@@ -889,15 +1125,573 @@ header {
 /*============================================================================
   #Work
 ==============================================================================*/
+.grid,
+section {
+  width:100%;
+}
+.container {
+  width:100%;
+  max-width:1300px;
+  margin:auto;
+}
+.btn {
+  border:1px solid $peach;
+  color:$pink;
+  margin:$gutter 0;
+  display:inline-flex;
+  padding:$gutter/2 $gutter;
+  text-transform: uppercase;
+  font-size:0.8em;
+  position: relative;
+  @include transition(all,300ms,linear);
+
+  &:hover,
+  &:active,
+  &:focus {
+    background:rgba(255,255,255,0.25);
+    border-color:$pink;
+  }
+
+  &.btn-navy {
+    color:$navy;
+    border-color:lighten($navylt,25%);
+    &:hover,
+    &:active,
+    &:focus {
+      border-color:$navy;
+    }
+  }
+
+  span.progress {
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    @include linear-gradient(to right, $peach 0%, $pink 100%);
+    width:0%;
+    z-index:1;
+  }
+  span.text {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+#flipbook{
+  width:1300px;
+  height:502px;
+  .page{
+    width:650px;
+    height:502px;
+    img{
+      width:100%;
+    }
+    .pageStaples {
+      width: 9px !important;
+      position: absolute;
+      z-index:3;
+      right: -2px;
+      top: 70px;
+    }
+    .btn {
+      position:absolute;
+      margin:auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 120px;
+      height: 52px;
+      z-index:3;
+      background:rgba(255,255,255,0.5);
+      opacity:0;
+
+      &:hover {
+        cursor:pointer;
+        background:rgba(255,255,255,0.75);
+        opacity:1;
+      }
+    }
+  }
+}
+.coverShadow {
+    position: absolute;
+    right: -52px;
+    margin-top: 25px;
+    width: 732px;
+    opacity: 1;
+}
+.pageShadow {
+    position: absolute;
+    right: -42px;
+    margin-top: 43px;
+    width: 106%;
+    height: 130%;
+    opacity:0;
+}
+.pageGradient-left {
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  z-index:2;
+  background: -moz-linear-gradient(left, rgba(130,128,130,0.02) 0%, rgba(255,255,255,0.15) 80%, rgba(130,128,130,0.3) 100%);
+  background: -webkit-linear-gradient(left, rgba(130,128,130,0.02) 0%,rgba(255,255,255,0.15) 80%,rgba(130,128,130,0.3) 100%);
+  background: linear-gradient(to right, rgba(130,128,130,0.02) 0%,rgba(255,255,255,0.15) 80%,rgba(130,128,130,0.3) 100%);
+}
+.pageGradient-right {
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  z-index:2;
+  background: -moz-linear-gradient(left, rgba(255,255,255,0.3) 0%, rgba(130,128,130,0.15) 35%, rgba(130,128,130,0) 70%);
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0.3) 0%,rgba(130,128,130,0.15) 35%,rgba(130,128,130,0) 70%);
+  background: linear-gradient(to right, rgba(255,255,255,0.3) 0%,rgba(130,128,130,0.15) 35%,rgba(130,128,130,0) 70%);
+}
+.spacer100 {
+  display: block;
+  width:100%;
+  height:100px
+}
+.spacer150 {
+  display: block;
+  width:100%;
+  height:100px
+}
+
+.closeWork {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: -80px;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    height:80px;
+    background:$navy;
+    z-index:3;
+
+    .closeCircle {
+      width:60px;
+      height:60px;
+      display: block;
+      margin:auto;
+      border-radius:50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include linear-gradient(to bottom right, $beige, $pink);
+
+      &:hover {
+        .line:first-child {
+          @include transform-rotate(90deg)
+        }
+        .line:last-child {
+          @include transform-rotate(-90deg)
+        }
+      }
+
+      .inner {
+        width:54px;
+        height:54px;
+        border-radius:50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:$navy;
+
+        .thin {
+          border:1px solid $pink;
+          width:46px;
+          height:46px;
+          border-radius:50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: $navy;
+        }
+      }
+
+      .line {
+        width:1px;
+        border-radius:0.5px;
+        height:18px;
+        background:$beige;
+        position: absolute;
+        @include transition(all,200ms,linear);
+
+        &:first-child {
+          @include transform-rotate(45deg)
+        }
+        &:last-child {
+          @include transform-rotate(-45deg)
+        }
+      }
+    }
+}
 
 #work {
-  display:flex;
-  flex-wrap: wrap;
-  justify-content:center;
-  align-items: center;
-  text-align:center;
-  height:100vh;
-  position: relative;
-  z-index: 1;
-  background:$beige;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+    text-align:center;
+    position: relative;
+    z-index: 1;
+
+    >div {
+      width:100%;
+    }
+
+    .overview {
+        background:$beige;
+        height:100vh;
+        display:flex;
+        flex-wrap:wrap;
+        align-items:center;
+
+        .container {
+          display:flex;
+          align-items:center;
+        }
+
+        .grid__item {
+          text-align: left;
+
+          &:first-child {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .circle {
+          background: rgba(255,255,255,0.5);
+          border-radius:50%;
+          width:0px;
+          height:0px;
+          display: block;
+          margin:auto;
+          position:absolute;
+          left:$gutter;
+          right:0;
+          z-index:0;
+          padding-left:$gutter;
+        }
+        svg {
+          width:200px;
+          position: relative;
+          z-index:1;
+          margin-bottom: -5px;
+
+          .orange {
+            fill:$navylt;
+          }
+          .black {
+            fill:$navy;
+          }
+        }
+  
+        h3 {
+          color: $navy;
+          text-align: left;
+          margin:0;
+          line-height: 1;
+
+          &.light {
+            color:#ccc;
+          }
+        }
+        p {
+          text-align:left;
+          color:$navylt;
+          font-size:0.8em;
+          font-style: italic;
+        }
+        .jobInfo {
+          margin-top:$gutter;
+
+          .grid__item:first-child {
+            display:inline-block;
+          }
+          h6,
+          p {
+            display: block;
+            width:100%;
+            text-align:left;
+            line-height:1;
+            margin:5px 0;
+          }
+          h6 {
+            color:$navy;
+            letter-spacing:0.1em;
+          }
+          p{
+            color:$navylt;
+          }
+        }
+    }
+    .workDetails {
+      height:0;
+      overflow:hidden;
+      height:auto;
+
+      p {
+        font-size:0.85em;
+      }
+
+      .intro {
+        background:darken($navy,10%);
+        text-align:left;
+        display:inline-block;
+        padding:$gutter*5 0;
+        z-index:1;
+        position:relative;
+
+        &.largeBottom {
+          padding-bottom:$gutter*7;
+        }
+        &.largeBottom {
+          padding-bottom:$gutter*7;
+        }
+
+        .container {
+          max-width:800px;
+
+          p {
+            font-style: italic;
+            letter-spacing: 0.05em;
+          }
+        }
+      }
+      .designs {
+        background:$beige;
+        text-align:left;
+        display:inline-block;
+        padding:$gutter*4 0;
+
+        .container {
+          position: relative;
+          display: flex;
+          flex-wrap:wrap;
+          align-items:center;
+
+          .bookText {
+            position:absolute;
+          }
+
+          .tableOfContents {
+            background:#f6f6f6;
+            padding:$gutter;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
+            h4 {
+              color: $navy;
+              border-bottom:1px solid rgba($navylt,0.5);
+              padding-bottom:3px;
+              font-size: 1.75em;
+            }
+            h5 {
+              color:$navy;
+              margin-bottom:5px;
+              letter-spacing: 0.15em;
+              font-weight:400;
+              font-size:1.15em;
+            }
+            p {
+              color:$navy;
+              max-width:300px;
+            }
+            ul {
+              list-style: none;
+              margin-top:5px;
+              padding-left:0;
+
+              li {
+                padding:3px 0;
+                color:$navy;
+                @include transition(all,200ms,linear);
+
+                &:hover {
+                  color: #ee532b;
+                  cursor: pointer;
+                }
+
+                &:before {
+                  content:'–';
+                  color:#ee532b;
+                  padding-right: 10px;
+                  font-size: 1.25em;
+                  line-height: 1em;
+                }
+              }
+            }
+            .inner {
+              position:relative;
+              z-index:1;
+            }
+            .pageGradient-left {
+              z-index:0;
+            }
+          }
+        }
+        h2,h3,h4,p{
+          color: $navy;
+        }
+      }
+      .assets {
+        background:$beige;
+        z-index:2;
+        position: relative;
+
+        img {
+            width: 100%;
+            max-width: 1100px;
+            margin-top: -100px;
+            margin-bottom:-100px;
+        }
+      }
+      .elements {
+        .colors {
+          display: flex;
+          flex-wrap:wrap;
+          justify-content: space-around;
+
+          h4 {
+            width:100%;
+          }
+
+          .color {
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            display: inline-block;
+            margin-top:$gutter;
+
+            &.red {
+              background:#ee532b;
+            }
+            &.orange {
+              background:#f78158;
+            }
+            &.blue {
+              background:#1100ff;
+            }
+            &.appblue {
+              background:#667aff;
+            }
+            &.green {
+              background:#0bc26a;
+            }
+            &.appgreen {
+              background:#6cdba6;
+            }
+          }
+        }
+        .typography {
+
+          .font {
+            margin-top:$gutter;
+            padding:$gutter/2 $gutter $gutter;
+            background:rgba(255,255,255,0.35);
+            text-align:left;
+
+            h5 {
+              opacity:0.5;
+              margin-bottom:10px;
+            }
+            p {
+              font-style:normal;
+              margin:5px 0;
+              font-size:1.2em;
+              letter-spacing: 0;
+
+              &.gt {
+                font-family:'GT America';
+              }
+            }
+            em {
+              margin-bottom:$gutter/2;
+              display: inline-block;
+            }
+          }
+
+        }
+      }
+      .homepage {
+        background:$beige;
+        position:relative;
+        z-index:3;
+
+        img {
+          margin-top:-100px;
+          margin-bottom:-100px;
+          max-width:600px;
+          width:100%;
+          box-shadow: 0 0 30px 0 rgba(0,0,0,.4);
+        }
+      }
+    }
+}
+ .bookModal {
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:rgba($navy,0.75);
+    display: none;
+    opacity:0;
+    z-index: 5;
+
+    .close {
+      width:80px;
+      height:80px;
+      position: absolute;
+      top:10px;
+      right:10px;
+      display: flex;
+      align-items:center;
+      justify-content: center;
+
+      .line {
+        width:80px;
+        height:3px;
+        border-radius: 1.5px;
+        position: absolute;
+        background: linear-gradient($beige,$pink);
+
+        &:first-child {
+          @include transform-rotate(45deg);
+        }
+        &:last-child {
+          @include transform-rotate(-45deg);
+        }
+      }
+    }
+
+    .box {
+      background: #fff;
+      padding:$gutter;
+      max-width:90%;
+      max-height:80%;
+      overflow:scroll;
+
+      img {
+        max-width:100%;
+        max-height:100%;
+        object-fit: contain;
+      }
+    }
 }
