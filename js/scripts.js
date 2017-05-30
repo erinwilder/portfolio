@@ -50,7 +50,7 @@ $(document).ready(function() {
 
     /* Porfolio - logo circle background grow */
     setTimeout(function() {
-        $('.circle').velocity({
+        $('.overview .circle').velocity({
             width:400,
             height:400
         },500);
@@ -94,6 +94,10 @@ $(document).ready(function() {
                 else {
                     details.stop().animate({ height: '0' }, animTime);
                 }
+
+                $('html, body').animate({
+                    scrollTop: $('.intro').offset().top
+                }, 1000);
             });
         });
     }
@@ -115,13 +119,15 @@ $(document).ready(function() {
 
     });
 
-    /* Books - interactive PDFs */
+    /* Interactive PDFs - initialize */
     $('#flipbook').turn({
         when: {
             turning: function(event, page, pageObject) {
             }
         }
     });
+
+    /* Interactive PDFs - switch shadow images based on 1 or 2 pages displayed */
     $('#flipbook').bind('turning', function(event, page, obj) {
         if (page==1) {
             $('.pageShadow').velocity({opacity:0},100);
@@ -135,6 +141,7 @@ $(document).ready(function() {
         }
     });
 
+    /* Interactive PDFs - link table of contents to coordinating page */
     var tocEl = document.getElementsByClassName('tocEl');
     for (var i=0; i<tocEl.length; i++) {
         tocEl[i].addEventListener("click", function(){
@@ -143,10 +150,9 @@ $(document).ready(function() {
         });
     }
 
-    var pageBtn = $('#flipbook .btn'); 
-    pageBtn.click(function() {
-        var imgSrc = '<img src="'+$(this).siblings('img').attr('src')+'">';
-
+    /* Interactive PDFs - create magnification of page image on click */
+    $('#flipbook').on('click', '.btn', function(e) {
+        var imgSrc = '<img src="'+$(this).siblings('.graphic').attr('src')+'">';
         $('.bookModal .box').html(imgSrc);
         $('.bookModal').css('display','flex');
         $('.bookModal').velocity({opacity:1});
@@ -156,5 +162,73 @@ $(document).ready(function() {
             $('.bookModal').css('display','none');
         });
     });
+
+    /* Sticky phone scroll */
+    setTimeout(function() {
+        var phone = $('.mobile .phone');
+        var phoneWidth = phone.width(),
+            phoneHeight = phone.height(),
+            phoneLeft = phone.offset().left,
+            sectionHeight = $('.emails').height(),
+            startPos = phone.offset().top;
+
+        function setPosition() {
+            var phonePos = phone.offset().top,
+                scrollTop = $(window).scrollTop(),
+                bottomBumperPos = $('.bottomBumper').offset().top,
+                topBumperPos = $('.topBumper').offset().top;
+
+                console.log(scrollTop-topBumperPos-98);
+
+            /* phone body sticking */ 
+            if (scrollTop < startPos-50) {
+                phone.css({
+                    "position":"absolute",
+                    "top":0,
+                    "left":0
+                });
+                $('.mobile .emailWrap').css({
+                    "position":"absolute",
+                    "top":0,
+                    "left":0
+                });
+            }
+            else if (scrollTop > (bottomBumperPos-phoneHeight-100)) {
+                phone.css({
+                    "position":"absolute",
+                    "left":0,
+                    "top":sectionHeight-phoneHeight-100
+                });
+                $('.emailWrap').css({
+                    "position":"absolute",
+                    "left":0,
+                    "top":sectionHeight-phoneHeight-100
+                });
+            }
+            else {
+                phone.css({
+                    "width":phoneWidth,
+                    "position":"fixed",
+                    "left":phoneLeft,
+                    "top":"50px"
+                });
+                $('.mobile .emailWrap').css({
+                    "width":phoneWidth-20,
+                    "position":"fixed",
+                    "left":phoneLeft,
+                    "top":"50px"
+                });
+                $('.mobile .email').css({
+                    "width":phoneWidth-20,
+                    "position":"absolute",
+                    "left":0,
+                    "top":-(scrollTop-topBumperPos)
+                });
+            }
+        }
+
+        $(window).scroll(setPosition);
+        setPosition();
+    },500);
 
 });
