@@ -2,6 +2,8 @@
 
 ## UI / UX Designer // Front-End Developer
 
+[erinwilder.me](http://erinwilder.me)
+
 A portfolio of design work by Erin Wilder.
 
 ## How to run website

@@ -22,8 +22,10 @@
   $viewportIncrement: 1px;
 
   $small: 480px;
+  $shmedium: 600px;
   $medium: 768px;
   $large: 769px;
+  $xlarge: 992px;
 
   $postSmall: $small + $viewportIncrement;
   $preMedium: $medium - $viewportIncrement;
@@ -871,6 +873,10 @@ h1 {
   }
   letter-spacing: 2rem;
   text-transform: uppercase;
+
+  @include at-query ($max,$small) {
+    font-size:6em;
+  }
 }
 h2 {
   font: {
@@ -887,6 +893,10 @@ h3 {
   }
   text-transform: uppercase;
   letter-spacing: 0.25rem;
+
+  @include at-query ($max,$small) {
+    font-size:3em;
+  }
 }
 h4 {
   font: {
@@ -921,6 +931,13 @@ a {
     color:#fff;
     background:$pink;
   }
+
+  &.anchor {
+    height:0;
+    border-bottom:0;
+    padding:0;
+    width:100%;
+  }
 }
 strong {
   font-weight:500;
@@ -935,6 +952,14 @@ header {
   align-items:center;
   justify-content: space-between;
   z-index:2;
+
+  a {
+    border-bottom:none;
+
+    &:hover {
+      background: transparent;
+    }
+  }
 
   svg {
     width:6rem;
@@ -983,10 +1008,19 @@ header {
       @include linear-gradient(to right, $pink 0%, $beige 80%);
       @include transition(all,100ms,linear);
 
+      @include at-query($max, $shmedium){
+        width: 4rem;
+      }
+
       &:nth-child(2) {
         margin:1rem 0;
         width:4rem;
         margin-left: auto;
+
+        @include at-query($max, $shmedium){
+          width: 3rem;
+          margin:0.85rem 0 0.85rem auto;
+        }
 
         &.rotate {
           display: none;
@@ -1008,11 +1042,19 @@ header {
           
         &:first-child,
         &:last-child {
-            width:4rem;
+          width:4rem;
+
+          @include at-query($max, $shmedium){
+            width: 3rem;
+          }
         }
         &:first-child.rotate,
         &:last-child.rotate {
           width:5rem;
+
+          @include at-query($max, $shmedium){
+              width: 4rem;
+            }
         }
       }
     }
@@ -1047,6 +1089,7 @@ header {
         a{
           color:#fff;
           padding:0 5px 0 15px;
+          border-bottom:none;
 
           &:before {
             content: '';
@@ -1058,15 +1101,16 @@ header {
             height:0.35em;
             background:$pink;
             z-index:-1;
-            opacity: 0.85;
+            opacity: 1;
             @include linear-gradient(to top, $pink 100%, $peach 100%);
             @include transition(all,250ms,linear);
           }
 
           &:hover {
+            background:transparent;
 
             &:before {
-              height:1.15em;
+              height:1em;
               opacity:1;
               @include linear-gradient(to top, $pink 0%, $peach 100%);
             }
@@ -1081,13 +1125,26 @@ body.work #menu .line {
     @include linear-gradient(to right, $navylt 20%, $navy 100%);
 }
 
-section>div {
+section#home>div {
     @include transition(all,300ms,linear);
 
     &.zoomOut {
       @include transform-scale(0.75);
     }
 }
+
+section {
+  &.bgPeach {
+    background:$peach;
+  }
+  &.bgBeige {
+    background:$beige;
+  }
+  &.bgNavy {
+    background:$navy;
+  }
+}
+
 
 /*============================================================================
   #Home
@@ -1105,6 +1162,8 @@ section>div {
   background:$navy;
 
   >div {
+    display: inline-block;
+
     >div {
       border:12px solid rgba(0,0,0,0.15);
       text-align:center;
@@ -1115,17 +1174,48 @@ section>div {
       align-items:center;
       position: relative;
 
+      @include at-query($max, $medium){
+        height:240px;
+      }
+
       h1 {
         line-height: 1;
         position:absolute;
-        left:-170px;
-        right:-200px;
+        left:-230px;
+        right:-260px;
         min-width:500px;
-        margin:12px 0 0;
+        margin:0;
+
+        @include at-query($max, $xlarge) {
+          left: -150px;
+          right: -180px;
+          font-size: 5em;
+          min-width: 0;
+        }
+         @include at-query($max, $medium) {
+          left: -30px;
+          right: -65px;
+          letter-spacing: 0.35em;
+          margin-top: -8px;
+        }
+        @include at-query($max, $medium) {
+          right: -50px;
+          letter-spacing: 0.25em;
+          font-size: 4em;
+          min-width: 0;
+        }
       }
     }
     h6 {
       color:$beige;
+
+      @include at-query($max, $medium) {
+        margin-bottom:0;
+      }
+      @include at-query($max, $shmedium) {
+        max-width: 350px;
+        letter-spacing: 0.5em;
+      }
     }
   }
 }
@@ -1145,7 +1235,7 @@ section {
 .btn {
   border:1px solid $peach;
   color:$pink;
-  margin:$gutter 0;
+  margin:$gutter 0 0;
   display:inline-flex;
   padding:$gutter/2 $gutter;
   text-transform: uppercase;
@@ -1228,6 +1318,10 @@ section {
     margin-top: 25px;
     width: 732px;
     opacity: 1;
+
+    @include at-query($max, 1300px) {
+      display:none;
+    }
 }
 .pageShadow {
     position: absolute;
@@ -1236,6 +1330,10 @@ section {
     width: 106%;
     height: 130%;
     opacity:0;
+
+    @include at-query($max, 1300px) {
+      display:none;
+    }
 }
 .pageGradient-left {
   position:absolute;
@@ -1258,6 +1356,11 @@ section {
   background: -moz-linear-gradient(left, rgba(255,255,255,0.3) 0%, rgba(130,128,130,0.15) 35%, rgba(130,128,130,0) 70%);
   background: -webkit-linear-gradient(left, rgba(255,255,255,0.3) 0%,rgba(130,128,130,0.15) 35%,rgba(130,128,130,0) 70%);
   background: linear-gradient(to right, rgba(255,255,255,0.3) 0%,rgba(130,128,130,0.15) 35%,rgba(130,128,130,0) 70%);
+}
+.spacer30 {
+  display: block;
+  width:100%;
+  height:30px;
 }
 .spacer100 {
   display: block;
@@ -1340,8 +1443,8 @@ section {
 .circle {
     background: rgba(255,255,255,0.5);
     border-radius:50%;
-    width:0px;
-    height:0px;
+    width:400px;
+    height:400px;
     display: block;
     margin:auto;
     position:absolute;
@@ -1350,9 +1453,27 @@ section {
     z-index:0;
     padding-left:$gutter;
 
+    @include at-query($max, 1100px) {
+      width:300px;
+      height:300px;
+    }
+    @include at-query($max, $medium) {
+      width:200px;
+      height:200px;
+    }
+
     &.circle600 {
       width:600px;
       height:600px;
+
+      @include at-query ($max,$shmedium) {
+        width:400px;
+        height:400px;
+      }
+      @include at-query ($max,$small) {
+        width:350px;
+        height:350px;
+      }
     }
     &.circle300 {
       width:300px;
@@ -1360,6 +1481,9 @@ section {
     }
     &.bgPeach {
       background:$peach;
+    }
+    &.bgBeige {
+      background:$beige;
     }
 }
 
@@ -1386,10 +1510,22 @@ section {
         .container {
           display:flex;
           align-items:center;
+          flex-wrap:wrap;
         }
 
         .grid__item {
           text-align: left;
+
+          @include at-query($max, $medium) {
+            padding-left:$gutter*2;
+          }
+
+          &.circleCol {
+            @include at-query($max, $medium) {
+              height:200px;
+              margin-bottom:$gutter;
+            }
+          }
 
           &:first-child {
             position: relative;
@@ -1397,6 +1533,10 @@ section {
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
+
+            @include at-query($max, $medium) {
+              padding-left:$gutter;
+            }
           }
         }
         svg {
@@ -1405,10 +1545,18 @@ section {
           z-index:1;
           margin-bottom: -5px;
 
+          @include at-query($max, $xlarge) {
+            width:150px;
+          }
+          @include at-query($max, $medium) {
+            width:100px;
+          }
+
           .orange {
             fill:$navylt;
           }
-          .black {
+          .black,
+          .green {
             fill:$navy;
           }
         }
@@ -1419,6 +1567,17 @@ section {
           margin:0;
           line-height: 1;
 
+          @include at-query($max, 1100px) {
+            font-size:3em;
+          }
+          @include at-query($max, $medium) {
+            display: inline-block;
+            margin-right: 0.15em;
+          }
+          @include at-query($max, $small) {
+            font-size: 2em;
+          }
+
           &.light {
             color:#ccc;
           }
@@ -1428,6 +1587,10 @@ section {
           color:$navylt;
           font-size:0.8em;
           font-style: italic;
+
+          @include at-query($max, $xlarge) {
+            font-size:0.7em;
+          }
         }
         .jobInfo {
           margin-top:$gutter;
@@ -1494,6 +1657,10 @@ section {
         .container {
           max-width:800px;
 
+          @include at-query($max, $medium) {
+            padding:0 15px;
+          }
+
           p {
             font-style: italic;
             letter-spacing: 0.05em;
@@ -1515,8 +1682,55 @@ section {
           align-items:center;
           max-width:1300px;
 
+          @include at-query($max, 1340px) {
+            margin:0 15px;
+          }
+
           .bookText {
             position:absolute;
+
+            @include at-query($max, 1300px) {
+              position:relative;
+              width:50%;
+            }
+            @include at-query($max, $medium) {
+              width:100%;
+            }
+
+            .one-half {
+              @include at-query($max, 1300px) {
+                width:100%;
+              }
+            }
+          }
+
+          #flipbook {
+            @include at-query($max, 1300px) {
+              display:none;
+            }
+          }
+
+          .staticBook {
+            display:none;
+            width:50%;
+            text-align:center;
+
+            @include at-query($max, 1300px) {
+              display:block;
+            }
+            @include at-query($max, $medium) {
+              width:100%;
+            }
+
+            img {
+              width:100%;
+              max-width:480px;
+              margin:auto;
+              display:block;
+            }
+            a {
+              margin-top:-30px;
+            }
           }
 
           .tableOfContents {
@@ -1591,6 +1805,11 @@ section {
             max-width: 1100px;
             margin-top: -100px;
             margin-bottom:-100px;
+
+            @include at-query ($max,$medium) {
+              margin-top: -50px;
+              margin-bottom:-50px;
+            }
         }
       }
       .elements {
@@ -1609,6 +1828,19 @@ section {
             border-radius:50%;
             display: inline-block;
             margin-top:$gutter;
+
+            @include at-query ($max,$medium) {
+              width:80px;
+              height:80px;
+            }
+            @include at-query ($max,$shmedium) {
+              width:60px;
+              height:60px;
+            }
+            @include at-query ($max,$small) {
+              width:50px;
+              height:50px;
+            }
 
             &.red {
               background:#ee532b;
@@ -1653,7 +1885,6 @@ section {
               }
             }
             em {
-              margin-bottom:$gutter/2;
               display: inline-block;
             }
           }
@@ -1736,8 +1967,27 @@ section {
                 position:relative;
                 z-index:1;
                 margin-right:-135px;
+
+                @include at-query ($max,$small) {
+                  max-width:400px;
+                  margin-right:-100px;
+                }
               }
             }
+            &.large--one-half.text-left {
+
+              @include at-query ($max,$medium) {
+                text-align:center !important;
+                margin:$gutter $gutter/2 0;
+              }
+            }
+          }
+        }
+      }
+      .fluid {
+        .container {
+          @include at-query ($max,$medium) {
+            padding:0 15px;
           }
         }
       }
@@ -1752,6 +2002,10 @@ section {
           margin-left:25px;
           display:flex;
           justify-content: center;
+
+          @include at-query ($max, $small) {
+            display:none;
+          }
 
           .emailWrap {
             background:#eaeaea;
@@ -1805,6 +2059,140 @@ section {
         }
       }
     }
+    .overview {
+
+      &.osea {
+        background:lighten($beige,2%);
+        border-top:1px solid $peach;
+
+        svg {
+          width:250px;
+
+          @include at-query($max,$medium) {
+            width:150px;
+          }
+        }
+      }
+    }
+    .elements {
+
+        .color {
+
+          &.greenDark {
+            background:#235353;
+          }
+          &.greenMid {
+            background:#77ad9c;
+          }
+          &.greenLight {
+            background:#d9ebe2;
+          }
+          &.coral {
+            background:#ff604e;
+          }
+          &.sand {
+            background:#e5ddcb;
+          }
+          &.white {
+            background:#fff;
+          }
+        }
+      }
+      .typography {
+
+        .font {
+          p {
+
+            &.proxima-condensed {
+              font-family:'proxima-nova-condensed';
+            }
+            &.proxima {
+              font-family:'proxima-nova';
+            }
+          }
+          em {
+            &.proxima {
+              font-family:'proxima-nova';
+            }
+          }
+        }        
+      }
+      .mailers {
+
+        &.largeBottom {
+          @include at-query ($max,$medium){
+            padding-bottom: 150px !important;
+          }
+        }
+
+        &.bgBeige {
+          padding:0;
+          z-index:2;
+
+          .carouselbox {
+              margin:-130px auto;
+              position:relative;
+              width:100%;
+              max-width:1300px;
+              display:inline-block;
+
+              @include at-query ($max,1400px) {
+                @include transform-scale(0.9);
+              }
+              @include at-query ($max,1300px) {
+                margin:-230px auto;
+                @include transform-scale(0.8);
+              }
+              @include at-query ($max,1150px) {
+                margin:-300px auto;
+                @include transform-scale(0.7);
+              }
+              @include at-query ($max,1000px) {
+                margin:-350px auto;
+                @include transform-scale(0.6);
+              }
+              @include at-query ($max,850px) {
+                margin:-400px auto;
+                @include transform-scale(0.5);
+              }
+              @include at-query ($max,700px) {
+                margin:-450px auto;
+                @include transform-scale(0.4);
+              }
+              @include at-query ($max,600px) {
+                margin:-520px auto -520px -30px;
+                @include transform-scale(0.3);
+              }
+              @include at-query ($max,450px) {
+                margin:-600px auto -600px -60px;
+                @include transform-scale(0.25);
+              }
+              
+              #carousel {
+                width:600px;
+                height:1410px;
+                position: relative;
+                margin:auto;
+                  img {
+                  display: hidden;
+                  cursor: pointer;
+                  box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
+
+                  &.carousel-center {
+                    box-shadow: 0 0 30px 0 rgba(0,0,0,.4);
+                  }
+                }
+              }
+            }
+         }
+      }
+      .end {
+        &.largeTop {
+          @include at-query ($max,$medium){
+            padding-top: 150px !important;
+          }
+        }
+      }
 }
  .bookModal {
     position:fixed;
@@ -1869,4 +2257,68 @@ section {
         object-fit: contain;
       }
     }
+}
+
+
+/*============================================================================
+  #About
+==============================================================================*/
+
+#about {
+  margin-bottom:0px;
+  margin-top:0px;
+  padding:$gutter*3 0;
+
+  &.largeTop {
+    padding-top:$gutter*8;
+  }
+
+  &.bgBeige {
+    h4,h5,li,p {
+      color:$navy;
+    }
+    h5 {
+      &:after {
+        content:'';
+        background: linear-gradient(to right,$navylt,$pink);
+        height:2px;
+        width:$gutter*2;
+        display:block;
+        margin-top:10px;
+      }
+    }
+    ul {
+      list-style: none;
+      padding-left:0;
+
+      li {
+        padding:5px 0;
+
+        &:before {
+          content:'—';
+          padding-right:10px;
+          color:$navylt;
+        }
+      }
+    }
+  }
+  .contact {
+    display:flex;
+    align-items:center;
+    
+    a {
+      margin:0.8em;
+      font-size:2em;
+      border-bottom:0;
+      color:#fff;
+
+      &:hover {
+        background:transparent;
+        color:$pink;
+      }
+      &:first-child {
+        margin-left:0;
+      }
+    }
+  }
 }

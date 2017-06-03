@@ -3,12 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title>Erin Wilder - UI / UX Designer, Front-End Developer</title>
+    <!--fonts-->
+    <script src="https://use.typekit.net/yma5zlx.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <!--stylesheets-->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="work">
     <header>
-      <!--header.html-->
+        <a href="/">
+          <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492 641">
+            <defs>
+                <linearGradient id="grad" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="30%" stop-color="#5E657A" />
+                  <stop offset="100%" stop-color="#363B4F"/>
+                </linearGradient>
+            </defs>
+            <path id="static" d="M382.85,138.35c20.39,52.09,9.35,89.53-11.39,102.38-48.67,30.15-46.67-93.85-19.17-93.85,20.5,0,18.49,94.48-30,115-64.08,27.11-53.5-103.5-26.5-103s16,113.53-34.5,124.74c-62.24,13.81-40.5-112.59-22-112.24,15.51.29,29.27,79.68-19,119-59,48-153,39-129.19-14.44,24.12-54.17,106.36-56.55,106.7-33,.41,27.5-74.5,43-93,14.5C63.13,193.19,199,148.72,191.62,192.15c-3.53,20.73-54.06,27.38-71.83,4.38-26-33.65,29-130.08,134-127.67,91.5,2.09,144.75,64.78,150.5,136.86C409.85,275.34,355,347.88,343,373.63s-13.5,85.75-15.75,87.5-132.5,12-132.75,27.5,124,14.25,127.5-2-123,13.86-122.25,29,118.87,13.25,118.5-1.5-118.93,18.8-118.5,31,111,15,116.25-2.25-61,29.31-61,29.31M200.79,453.67c-2.5-63.29-51.75-77-72.35-132.16"/>
+            <path id="motion" stroke=url(#grad) d="M382.85,138.35c20.39,52.09,9.35,89.53-11.39,102.38-48.67,30.15-46.67-93.85-19.17-93.85,20.5,0,18.49,94.48-30,115-64.08,27.11-53.5-103.5-26.5-103s16,113.53-34.5,124.74c-62.24,13.81-40.5-112.59-22-112.24,15.51.29,29.27,79.68-19,119-59,48-153,39-129.19-14.44,24.12-54.17,106.36-56.55,106.7-33,.41,27.5-74.5,43-93,14.5C63.13,193.19,199,148.72,191.62,192.15c-3.53,20.73-54.06,27.38-71.83,4.38-26-33.65,29-130.08,134-127.67,91.5,2.09,144.75,64.78,150.5,136.86C409.85,275.34,355,347.88,343,373.63s-13.5,85.75-15.75,87.5-132.5,12-132.75,27.5,124,14.25,127.5-2-123,13.86-122.25,29,118.87,13.25,118.5-1.5-118.93,18.8-118.5,31,111,15,116.25-2.25-61,29.31-61,29.31M200.79,453.67c-2.5-63.29-51.75-77-72.35-132.16"/>
+        </svg>
+      </a>
+      <div id="menu">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+      </div>
+      <nav id="nav">
+          <ul>
+              <li><h2><a href="/">Home</a></h2></li>
+              <li><h2><a href="/work.html">Work</a></h2></li>
+              <li><h2><a href="/about.html">About</a></h2></li>
+          </ul>
+      </nav>    
     </header>
     <div class="closeWork">
       <div class="closeCircle">
@@ -19,10 +45,10 @@
       </div>
     </div>
     <section id="work">
-        <div class="overview">
+        <div class="overview oe">
           <div class="grid">
             <div class="container">
-                <div class="grid__item large--one-half">
+                <div class="grid__item large--one-half medium--one-whole small--hide circleCol">
                     <div class="circle"></div>
                     <svg id="outbound-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.24 162.85">
                         <path class="orange" d="M82.72,93.94a39.61,39.61,0,0,0,39.52,39.31h11V0H0L0,11.49A39.6,39.6,0,0,0,39.55,51h2v1.84A39.64,39.64,0,0,0,80.88,92.1h1.83Zm40.8,29.63-1.89,0A30,30,0,0,1,92.42,94V92.1h31.11Zm-84-82.31A29.88,29.88,0,0,1,9.73,11.56V9.7H123.52V41.26ZM51.27,52.82V51h72.27V82.4H81.08A29.9,29.9,0,0,1,51.27,52.82Z"/>
@@ -30,11 +56,10 @@
                         <path class="black" d="M0,152.06c0-4.49,2.45-7.23,6.22-7.23s6.22,2.74,6.22,7.23S10,159.3,6.22,159.3,0,156.46,0,152.06Zm10.87,0c0-3.66-1.73-6-4.65-6s-4.65,2.29-4.65,6,1.75,6,4.65,6S10.87,155.72,10.87,152.06Zm3,3.35v-6.17h1.34v6c0,1.91.89,2.76,2.22,2.76,1.77,0,2.84-1.52,2.84-3.48v-5.31h1.36V159H20.38v-2a3.33,3.33,0,0,1-3.15,2.24C14.8,159.2,13.91,157.72,13.91,155.41Zm9-6.17h1.79v-2.57l1.36-.58v3.15h2.51v1.13H26.1v5.83c0,1.15.51,1.65,1.52,1.65a3.93,3.93,0,0,0,1-.14V159a4.58,4.58,0,0,1-1.34.18c-1.89,0-2.53-1.15-2.53-2.88v-5.89H23ZM31.49,157,31.24,159h-1v-14.1h1.34v6.36A3.37,3.37,0,0,1,34.82,149c2.39,0,3.95,2.08,3.95,5.1s-1.6,5.1-4,5.1A3.37,3.37,0,0,1,31.49,157Zm5.83-2.92c0-2.35-1.05-3.89-2.92-3.89s-2.88,1.46-2.88,3.7v.47c0,2.16,1.09,3.62,2.84,3.62S37.33,156.48,37.33,154.1Zm2.71,0c0-3.17,1.77-5.1,4.47-5.1S49,150.93,49,154.1s-1.77,5.1-4.45,5.1S40,157.27,40,154.1Zm7.49,0c0-2.53-1.15-3.91-3-3.91s-3,1.38-3,3.91,1.15,3.91,3,3.91S47.52,156.63,47.52,154.1Zm2.81,1.3v-6.17h1.34v6c0,1.91.89,2.76,2.22,2.76,1.77,0,2.84-1.52,2.84-3.48v-5.31H58.1V159H56.81v-2a3.33,3.33,0,0,1-3.15,2.24C51.23,159.2,50.34,157.72,50.34,155.41Zm9.29-6.17h1.28v2.14A3.32,3.32,0,0,1,64.23,149c2.18,0,3.31,1.36,3.31,4v6H66.18V153c0-1.89-.82-2.86-2.35-2.86-1.75,0-2.86,1.4-2.86,3.68V159H59.62Zm9.27,4.86c0-3,1.69-5.1,4.16-5.1a3.1,3.1,0,0,1,3.05,2v-6.15h1.36V159H76.19V156.9a3.39,3.39,0,0,1-3.29,2.29C70.49,159.2,68.89,157.14,68.89,154.1Zm7.23.21v-.41c0-2.22-1.07-3.7-2.88-3.7s-2.92,1.46-2.92,3.89,1.09,3.89,2.9,3.89S76.13,156.48,76.13,154.32ZM88.28,157v2h-9.1v-14.1h9v2.26H81.69v3.65h6.13v1.94H81.69V157ZM90,149.24h2.22v1.89A3.32,3.32,0,0,1,95.44,149c2.12,0,3.23,1.34,3.23,3.95v6H96.32v-5.8c0-1.54-.58-2.3-1.81-2.3s-2.18,1.09-2.18,2.94V159H90Zm20.49-4H113v2.43h-2.53Zm.12,4h2.33V159H110.6Zm3.82,0h2.22v1.89a3.32,3.32,0,0,1,3.23-2.14c2.12,0,3.23,1.34,3.23,3.95v6h-2.35v-5.8c0-1.54-.58-2.3-1.81-2.3s-2.18,1.09-2.18,2.94V159h-2.33Zm18.83,5.45h-6.83a2.5,2.5,0,0,0,2.59,2.68,2.45,2.45,0,0,0,2.37-1.61l1.79.82a4.33,4.33,0,0,1-4.24,2.63c-3,0-4.77-1.81-4.77-5s1.75-5.19,4.65-5.19,4.43,1.63,4.43,4.61ZM131,153c0-1.59-.8-2.43-2.18-2.43s-2.31,1-2.35,2.59H131Zm-30.68,6.62h2.31c.19,1.14.94,1.58,2.12,1.58,1.45,0,2.12-.79,2.12-2.51V157a2.82,2.82,0,0,1-2.83,1.91c-2.37,0-4-2.06-4-5s1.7-4.9,4.11-4.9a3,3,0,0,1,2.85,1.73l.3-1.48h1.9v9.39c0,2.85-1.54,4.22-4.49,4.22C102,162.85,100.5,161.81,100.27,159.61Zm6.59-5.36v-.67c0-1.7-.91-2.81-2.22-2.81s-2.27,1.16-2.27,3.16.89,3.33,2.26,3.33S106.86,156,106.86,154.25Z"/>
                     </svg>
                 </div>
-                <div class="grid__item large--one-half">
+                <div class="grid__item large--one-half medium--one-whole">
                     <h3 class="light">01</h3>
                     <h3>OutboundEngine</h3>
-                    <p>OutboundEngine is a SAAS startup in Austin, TX. They create and send marketing campaigns on behalf of their cutsomers across multiple channels, including email, Facebook, Twitter and Linkedin.</p>
-                    <p>As their web designer / developer my two main projects were working on a company rebrand and building a new customer-facing, lead generation website.</p>
+                    <p>OutboundEngine is a marketing automation SAAS startup in Austin, TX. As their web designer / developer my two main projects were working on a company rebrand and building a new customer-facing, lead generation website.</p>
                     <p>My other responsibilities include working with marketing channel managers to create branded, responsive landing page templates and other digital assets for their campaigns. The main channels I work with are email, facebook, and customer retention.</p>
                     <div class="grid jobInfo">
                       <div class="grid__item one-third">
@@ -50,11 +75,12 @@
                         <p>12.2015 - Present</p>
                       </div>
                     </div>
-                    <a id="btn-oe" class="btn btn-navy workDetailsBtn" href="#"><span class="progress"></span><span class="text">View work</span></a>
+                    <a id="oe" class="btn btn-navy workDetailsBtn" href="#"><span class="progress"></span><span class="text">View work</span></a>
                 </div>
             </div>
           </div>
         </div>
+        <a class="anchor" name="oeDetails"></a>
         <div class="workDetails oe">
             <section class="intro bgNavyDark">
                 <div class="container text-center">
@@ -72,159 +98,165 @@
                         <p><strong>Click any corner of the book to turn the page. Click the center of the page to enlarge that image.</strong></p>
                       </div>
                     </div>
+                    <div class="staticBook">
+                      <img src="img/oe_pdf.png">
+                      <a target="_blank" href="img/oe_pdf.pdf" class="btn btn-navy">View eBook</a>
+                    </div>
                     <img class="coverShadow" src="img/cover_shadow.png">
                     <img class="pageShadow" src="img/page_shadow.png">
-                    <div id="flipbook">
-                      <div>
-                        <img src="img/website3.0_pitch-prod_Cover_Front.png">
-                      </div>
-                      <div>
-                        <img class="pageStaples" src="img/page_staples.png">
-                        <div class="tableOfContents">
-                          <div class="inner">
-                            <h4>Table of Contents</h4>
-                            <p>Click on the corner of a page to turn it, or click on any chapter here to skip to that section.</p>
-                            <h5>Product experience</h5>
-                            <ul>
-                              <li class="tocEl" data-page="3">How It Works</li>
-                              <li class="tocEl" data-page="6">Industry Tour</li>
-                              <li class="tocEl" data-page="10">Product Features</li>
-                            </ul>
-                            <h5>Demo experience</h5>
-                            <ul>
-                              <li class="tocEl" data-page="14">Get The Demo</li>
-                              <li class="tocEl" data-page="18">Thank You</li>
-                              <li class="tocEl" data-page="22">Sample Campaign</li>
-                            </ul>
+                    <div class="flipbookWrapper">
+                      <div id="flipbook">
+                        <div>
+                          <img src="img/website3.0_pitch-prod_Cover_Front.png">
+                        </div>
+                        <div>
+                          <img class="pageStaples" src="img/page_staples.png">
+                          <div class="tableOfContents">
+                            <div class="inner">
+                              <h4>Table of Contents</h4>
+                              <p>Click on the corner of a page to turn it, or click on any chapter here to skip to that section.</p>
+                              <h5>Product experience</h5>
+                              <ul>
+                                <li class="tocEl" data-page="3">How It Works</li>
+                                <li class="tocEl" data-page="6">Industry Tour</li>
+                                <li class="tocEl" data-page="10">Product Features</li>
+                              </ul>
+                              <h5>Demo experience</h5>
+                              <ul>
+                                <li class="tocEl" data-page="14">Get The Demo</li>
+                                <li class="tocEl" data-page="18">Thank You</li>
+                                <li class="tocEl" data-page="22">Sample Campaign</li>
+                              </ul>
+                            </div>
+                            <div class="pageGradient-left"></div>
                           </div>
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <div class="pageGradient-right"></div>
+                          <img class="graphic" src="img/website3.0_pitch-prod_Page_01.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <img class="pageStaples" src="img/page_staples.png">
                           <div class="pageGradient-left"></div>
+                          <img class="graphic" src="img/website3.0_pitch-prod_Page_02.jpg">
                         </div>
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <div class="pageGradient-right"></div>
-                        <img class="graphic" src="img/website3.0_pitch-prod_Page_01.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <img class="pageStaples" src="img/page_staples.png">
-                        <div class="pageGradient-left"></div>
-                        <img class="graphic" src="img/website3.0_pitch-prod_Page_02.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <div class="pageGradient-right"></div>
-                        <img class="graphic" src="img/website3.0_pitch-prod_Page_03.jpg">
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <div class="pageGradient-right"></div>
+                          <img class="graphic" src="img/website3.0_pitch-prod_Page_03.jpg">
+                          </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <img class="pageStaples" src="img/page_staples.png">
+                          <div class="pageGradient-left"></div>
+                          <img class="graphic" src="img/website3.0_pitch-prod_Page_04.jpg">
                         </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <img class="pageStaples" src="img/page_staples.png">
-                        <div class="pageGradient-left"></div>
-                        <img class="graphic" src="img/website3.0_pitch-prod_Page_04.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <div class="pageGradient-right"></div>
-                        <img class="graphic" src="img/website3.0_pitch-prod_Page_05.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <img class="pageStaples" src="img/page_staples.png">
-                        <div class="pageGradient-left"></div>
-                        <img class="graphic" src="img/website3.0_pitch-prod_Page_06.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <div class="pageGradient-right"></div>
-                        <img class="graphic" src="img/website3.0_pitch-prod_Page_07.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <img class="pageStaples" src="img/page_staples.png">
-                        <div class="pageGradient-left"></div>
-                        <img class="graphic" src="img/website3.0_pitch-prod_Page_08.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <div class="pageGradient-right"></div>
-                        <img class="graphic" src="img/website3.0_pitch-prod_Page_09.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <img class="pageStaples" src="img/page_staples.png">
-                        <div class="pageGradient-left"></div>
-                        <img class="graphic" src="img/website3.0_pitch-prod_Page_10.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <div class="pageGradient-right"></div>
-                        <img class="graphic" src="img/website3.0_pitch-prod_Page_11.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <img class="pageStaples" src="img/page_staples.png">
-                        <div class="pageGradient-left"></div>
-                        <img class="graphic" src="img/website3.0_pitch-demo_Page_01.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <div class="pageGradient-right"></div>
-                        <img class="graphic" src="img/website3.0_pitch-demo_Page_02.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <img class="pageStaples" src="img/page_staples.png">
-                        <div class="pageGradient-left"></div>
-                        <img class="graphic" src="img/website3.0_pitch-demo_Page_03.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <div class="pageGradient-right"></div>
-                        <img class="graphic" src="img/website3.0_pitch-demo_Page_04.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <img class="pageStaples" src="img/page_staples.png">
-                        <div class="pageGradient-left"></div>
-                        <img class="graphic" src="img/website3.0_pitch-demo_Page_05.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <div class="pageGradient-right"></div>
-                        <img class="graphic" src="img/website3.0_pitch-demo_Page_06.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <img class="pageStaples" src="img/page_staples.png">
-                        <div class="pageGradient-left"></div>
-                        <img class="graphic" src="img/website3.0_pitch-demo_Page_07.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <div class="pageGradient-right"></div>
-                        <img class="graphic" src="img/website3.0_pitch-demo_Page_08.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <img class="pageStaples" src="img/page_staples.png">
-                        <div class="pageGradient-left"></div>
-                        <img class="graphic" src="img/website3.0_pitch-demo_Page_09.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <div class="pageGradient-right"></div>
-                        <img class="graphic" src="img/website3.0_pitch-demo_Page_10.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <img class="pageStaples" src="img/page_staples.png">
-                        <div class="pageGradient-left"></div>
-                        <img class="graphic" src="img/website3.0_pitch-demo_Page_11.jpg">
-                      </div>
-                      <div>
-                        <div class="btn btn-navy">Enlarge</div>
-                        <div class="pageGradient-right"></div>
-                        <img class="graphic" src="img/website3.0_pitch-demo_Page_12.jpg">
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <div class="pageGradient-right"></div>
+                          <img class="graphic" src="img/website3.0_pitch-prod_Page_05.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <img class="pageStaples" src="img/page_staples.png">
+                          <div class="pageGradient-left"></div>
+                          <img class="graphic" src="img/website3.0_pitch-prod_Page_06.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <div class="pageGradient-right"></div>
+                          <img class="graphic" src="img/website3.0_pitch-prod_Page_07.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <img class="pageStaples" src="img/page_staples.png">
+                          <div class="pageGradient-left"></div>
+                          <img class="graphic" src="img/website3.0_pitch-prod_Page_08.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <div class="pageGradient-right"></div>
+                          <img class="graphic" src="img/website3.0_pitch-prod_Page_09.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <img class="pageStaples" src="img/page_staples.png">
+                          <div class="pageGradient-left"></div>
+                          <img class="graphic" src="img/website3.0_pitch-prod_Page_10.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <div class="pageGradient-right"></div>
+                          <img class="graphic" src="img/website3.0_pitch-prod_Page_11.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <img class="pageStaples" src="img/page_staples.png">
+                          <div class="pageGradient-left"></div>
+                          <img class="graphic" src="img/website3.0_pitch-demo_Page_01.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <div class="pageGradient-right"></div>
+                          <img class="graphic" src="img/website3.0_pitch-demo_Page_02.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <img class="pageStaples" src="img/page_staples.png">
+                          <div class="pageGradient-left"></div>
+                          <img class="graphic" src="img/website3.0_pitch-demo_Page_03.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <div class="pageGradient-right"></div>
+                          <img class="graphic" src="img/website3.0_pitch-demo_Page_04.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <img class="pageStaples" src="img/page_staples.png">
+                          <div class="pageGradient-left"></div>
+                          <img class="graphic" src="img/website3.0_pitch-demo_Page_05.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <div class="pageGradient-right"></div>
+                          <img class="graphic" src="img/website3.0_pitch-demo_Page_06.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <img class="pageStaples" src="img/page_staples.png">
+                          <div class="pageGradient-left"></div>
+                          <img class="graphic" src="img/website3.0_pitch-demo_Page_07.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <div class="pageGradient-right"></div>
+                          <img class="graphic" src="img/website3.0_pitch-demo_Page_08.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <img class="pageStaples" src="img/page_staples.png">
+                          <div class="pageGradient-left"></div>
+                          <img class="graphic" src="img/website3.0_pitch-demo_Page_09.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <div class="pageGradient-right"></div>
+                          <img class="graphic" src="img/website3.0_pitch-demo_Page_10.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <img class="pageStaples" src="img/page_staples.png">
+                          <div class="pageGradient-left"></div>
+                          <img class="graphic" src="img/website3.0_pitch-demo_Page_11.jpg">
+                        </div>
+                        <div>
+                          <div class="btn btn-navy">Enlarge</div>
+                          <div class="pageGradient-right"></div>
+                          <img class="graphic" src="img/website3.0_pitch-demo_Page_12.jpg">
+                        </div>
                       </div>
                     </div>
                 </div>
@@ -247,7 +279,7 @@
                       <div class="color blue"></div>
                       <div class="color appblue"></div>
                       <div class="color green"></div>
-                      <div class="color app green"></div>
+                      <div class="color appgreen"></div>
                     </div>
                     <div class="spacer150"></div>
                       <div class="typography">
@@ -256,6 +288,7 @@
                           <h5>GT America</h5>
                           <p class="gt">The quick brown fox jumps over a lazy dog.</p>
                           <em class="gt">The quick brown fox jumps over a lazy dog.</em>
+                          <div class="spacer30"></div>
                           <h5>GT America Condensed</h5>
                           <p>The quick brown fox jumps over a lazy dog.</p>
                         </div>
@@ -314,6 +347,174 @@
               </div>
             </section>
         </div>
+        <div class="overview osea">
+          <div class="grid">
+            <div class="container">
+                <div class="grid__item large--one-half medium--one-whole small--hide circleCol">
+                    <div class="circle"></div>
+                    <svg id="osea-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 570.58 281.67">
+                      <path class="green" d="M139.35,281.67l-2.06-19.53c4-.42,8.24-2.1,12.7-3.86,1.6-.63,3.25-1.29,4.94-1.91,41.59-15.17,52.48-37.71,56.56-69.16,2.35-18.08.29-39.2-1.69-59.62C204.93,77.5,199.41,20.75,261.3,0l6.24,18.63c-47.07,15.78-43,58.08-38.19,107.06,2.09,21.52,4.25,43.77,1.62,64.06-4.24,32.61-15.56,65.49-69.31,85.09-1.44.52-2.89,1.1-4.43,1.71-5.24,2.08-11.17,4.43-17.87,5.14Z"/>
+                      <path class="green" d="M74.9,66.65q32.44,0,54,20.56t21.58,51.55q0,31-21.78,51.3t-54.92,20.3q-31.64,0-52.72-20.3T0,139.16q0-31.39,21.23-51.95T74.9,66.65Zm.85,19.12q-24,0-39.51,15T20.76,139.17q0,22.65,15.52,37.67t38.86,15q23.43,0,39.11-15.33t15.67-38.17q0-22.24-15.67-37.41T75.75,85.77Z"/>
+                      <path class="green" d="M299,68h79.56V85.9H319.13v42.76H376.5v17.89H319.13v43.59H380.4V208H299Z"/>
+                      <path class="green" d="M493.6,66.79h14.12l62.87,140.83H550.06L531.39,166.1H471.74l-17.48,41.53H433.66Zm29.77,81.42L500.58,97.58,479.5,148.21Z"/>
+                    </svg>
+                </div>
+                <div class="grid__item large--one-half medium--one-whole">
+                    <h3 class="light">02</h3>
+                    <h3>OSEA Malibu</h3>
+                    <p>OSEA Malibu is an organic skincare company in Malibu, CA. Their two main sales channels are their ecommerce website and wholesale.</p>
+                    <p>As their Lead Designer and web developer my responsibilities are to develop and maintain the brand, and design / build their ecommerce web store.</p>
+                    <p>My other responsibilities include working with the marketing team on email campaigns, developing marketing strategies with the CEO, and providing digital resources for the SEM channels.</p>
+                    <div class="grid jobInfo">
+                      <div class="grid__item one-third">
+                        <h6>Title</h6>
+                        <p>Lead Designer</p>
+                      </div>
+                      <div class="grid__item one-third">
+                        <h6>Team</h6>
+                        <p>Marketing</p>
+                      </div>
+                      <div class="grid__item one-third">
+                        <h6>Duration</h6>
+                        <p>08.2013 - Present</p>
+                      </div>
+                    </div>
+                    <a id="osea" class="btn btn-navy workDetailsBtn"><span class="progress"></span><span class="text">View work</span></a>
+                </div>
+            </div>
+          </div>
+        </div>
+        <a class="anchor" name="oseaDetails"></a>
+        <div class="workDetails osea">
+          <section class="rebrand bgNavyDark largeBottom">
+                <div class="container text-center">
+                    <h3>Brand</h3>
+                    <p>Because I have worked with OSEA's marketing team for so long, I have play a large rold in developing the brand.</p>
+                    <p>The main ideas we communicate through the brand are cleanliness and purity with strong ties to the ocean, and seaweed specifically. We acheive this by using whitespace with a clear, green palette.</p>
+                </div>
+            </section>
+            <section class="assets bgBeige">
+                <img src="img/osea-brand-assets.png">
+            </section>
+            <section class="elements bgNavyDark">
+                <div class="container text-center">
+                    <div class="colors">
+                      <h4>Colors</h4>
+                      <div class="color greenDark"></div>
+                      <div class="color greenMid"></div>
+                      <div class="color greenLight"></div>
+                      <div class="color coral"></div>
+                      <div class="color sand"></div>
+                      <div class="color white"></div>
+                    </div>
+                    <div class="spacer150"></div>
+                      <div class="typography">
+                        <h4>Typography</h4>
+                        <div class="font">
+                          <h5>Proxima Nova Condensed</h5>
+                          <p class="proxima-condensed">The quick brown fox jumps over a lazy dog.</p>
+                          <div class="spacer30"></div>
+                          <h5>Proxima Nova</h5>
+                          <p class="proxima">The quick brown fox jumps over a lazy dog.</p>
+                          <em class="proxima">The quick brown fox jumps over a lazy dog.</em>
+                        </div>
+                      </div>
+                </div>
+            </section>
+            <section class="intro bgNavy largeBottom">
+                <div class="container text-center">
+                    <h3>Website</h3>
+                    <p>I've built 3 iterations of the OSEA website. The first two were built using a Magento CMS, and the most recent is built with Shopify Plus.</p>
+                    <p>The most recent site design improved the shopping experience in many ways. The information architecture, mobile shopping experience, and checkout process being some of hte most important.</p>
+                </div>
+            </section>
+            <section class="homepage bgBeige">
+                <div class="visitContain">
+                    <a target="_blank" href="https://osea.com" class="visitSite">Visit Site &rarr;</a>
+                </div>
+                <img src="img/osea_home.jpg">
+            </section>
+            <section class="mobile bgNavyDark largeTop">
+              <div class="grid">
+                <div class="container">
+                    <div class="spacer100"></div>
+                    <div class="grid__item one-whole">
+                        <div class="circle circle600 bgBeige"></div>
+                        <img class="mobileScreens" src="img/osea_mobile_screens.png">
+                    </div>
+                    <div class="spacer200"></div>
+                    <div class="grid__item large--one-half flexHalf">
+                        <div class="circle circle300 bgBeige"></div>
+                        <img class="iphone" src="img/osea_home-mobile.png">
+                    </div>
+                    <div class="grid__item large--one-half text-left">
+                        <h4>Mobile</h4>
+                        <p>All pages on the site are fully responsive down to 320px for optimal viewing on any device.</p>
+                    </div>
+                </div>
+              </div>
+            </section>
+            <section class="mailers bgNavy largeBottom">
+              <div class="container text-center">
+                <h3>Email Marketing</h3>
+                <p>One of the marketing channels I create assets for is email. Below are a few examples of promotional mailers I've created.</p>
+                <p>Click the image on either side to enlarge.</p>
+              </div>
+            </section>
+            <section class="mailers bgBeige">
+              <div class="carouselbox">
+                <div id="carousel">
+                  <img width="600" src="img/osea_mailer_md17.jpg">
+                  <img width="600" src="img/osea_mailer_tss.jpg">
+                  <img width="600" src="img/osea_mailer_md16.jpg">
+                  <img width="600" src="img/osea_mailer_follain.jpg">
+                </div>
+              </div>
+            </section>
+            <section class="end bgNavyDark largeTop">
+              <div class="container text-center">
+                <h4><a href="">Close project &rarr;</a></h4>
+              </div>
+            </section>
+        </div>
+        <!--<div class="overview ts">
+          <div class="grid">
+            <div class="container">
+                <div class="grid__item large--one-half">
+                    <div class="circle"></div>
+                    <svg id="ts-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 570.58 281.67">
+                      <path class="green" d="M139.35,281.67l-2.06-19.53c4-.42,8.24-2.1,12.7-3.86,1.6-.63,3.25-1.29,4.94-1.91,41.59-15.17,52.48-37.71,56.56-69.16,2.35-18.08.29-39.2-1.69-59.62C204.93,77.5,199.41,20.75,261.3,0l6.24,18.63c-47.07,15.78-43,58.08-38.19,107.06,2.09,21.52,4.25,43.77,1.62,64.06-4.24,32.61-15.56,65.49-69.31,85.09-1.44.52-2.89,1.1-4.43,1.71-5.24,2.08-11.17,4.43-17.87,5.14Z"/>
+                      <path class="green" d="M74.9,66.65q32.44,0,54,20.56t21.58,51.55q0,31-21.78,51.3t-54.92,20.3q-31.64,0-52.72-20.3T0,139.16q0-31.39,21.23-51.95T74.9,66.65Zm.85,19.12q-24,0-39.51,15T20.76,139.17q0,22.65,15.52,37.67t38.86,15q23.43,0,39.11-15.33t15.67-38.17q0-22.24-15.67-37.41T75.75,85.77Z"/>
+                      <path class="green" d="M299,68h79.56V85.9H319.13v42.76H376.5v17.89H319.13v43.59H380.4V208H299Z"/>
+                      <path class="green" d="M493.6,66.79h14.12l62.87,140.83H550.06L531.39,166.1H471.74l-17.48,41.53H433.66Zm29.77,81.42L500.58,97.58,479.5,148.21Z"/>
+                    </svg>
+                </div>
+                <div class="grid__item large--one-half">
+                    <h3 class="light">02</h3>
+                    <h3>Touchstone</h3>
+                    <p>OSEA Malibu is an organic skincare company in Malibu, CA. Their two main sales channels are their ecommerce website and wholesale.</p>
+                    <p>As their Lead Designer and web developer my responsibilities are to develop and maintain the brand, and design / build their ecommerce web store.</p>
+                    <p>My other responsibilities include working with the marketing team on email campaigns, developing marketing strategies with the CEO, and providing digital resources for the SEM channels.</p>
+                    <div class="grid jobInfo">
+                      <div class="grid__item one-third">
+                        <h6>Title</h6>
+                        <p>UI / UX Designer</p>
+                      </div>
+                      <div class="grid__item one-third">
+                        <h6>Team</h6>
+                        <p>Marketing</p>
+                      </div>
+                      <div class="grid__item one-third">
+                        <h6>Duration</h6>
+                        <p>10.2014 - Present</p>
+                      </div>
+                    </div>
+                    <a id="ts" class="btn btn-navy workDetailsBtn"><span class="progress"></span><span class="text">View work</span></a>
+                </div>
+            </div>
+          </div>
+        </div>
+        <a class="anchor" name="tsDetails"></a>-->
     </section>
     <div class="bookModal">
       <div class="close">
